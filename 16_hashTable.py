@@ -13,20 +13,20 @@ hash_table = list([0 for i in range(8)])
 def get_key(data):
     return hash(data)
 
-def hash_function(key):
+def hash_function(key): # 나머지 8에 들어간다는 거니까 0~7까지 공간에 들어감 총 8
     return key%8
 
 def save_data(data, value):
     index_key = get_key(data)
     hash_address = hash_function(index_key)
-    if hash_table[hash_address] != 0:
+    if hash_table[hash_address] != 0: # 다른 key,value가 이미 들어있으면 
         for index in range(len(hash_table[hash_address])):
-            if hash_table[hash_address][index][0] == index_key:
+            if hash_table[hash_address][index][0] == index_key: #만약에 키값이 같으면 벨류 업데이트
                 hash_table[hash_address][index][1] = value
                 return
-            hash_table[hash_address].append([index_key.value])
-        else:
-            hash_table[hash_address] = [[index_key.value]]
+            hash_table[hash_address].append([index_key, value])
+    else:
+        hash_table[hash_address] = [[index_key, value]]
 
     hash_table[hash_address] = value
 
@@ -35,7 +35,7 @@ def read_data(data):
     hash_address = hash_function(index_key)
     if hash_table[hash_address] != 0:
         for index in range(len(hash_table[hash_address])):
-            if hash_table[hash_address][index][0] == index_key:
+            if hash_table[hash_address][index][0] == index_key: 
                 return hash_table[hash_address][index][1]
         return None
     else:
@@ -50,3 +50,18 @@ save_data('Dd', '1201023010')
 save_data('Data', '3301023010')
 read_data('Dd')
 print(hash_table)
+
+
+'''
+[
+	[
+		[6782408722356686082, '1'], 
+		[-8142135132873710882, '2'], 
+		[-1483869573095058722, '4'], 
+		[-1483869573095058722, '4']
+	], 
+	[
+		[4212028575406034377, '3']
+	]
+]
+'''
