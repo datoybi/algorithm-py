@@ -26,7 +26,7 @@ print(data_queue.qsize()) # 1
 
 
 
-# LifoQueue()
+# LifoQueue() : Last in, First out Queue
 import queue;
 data_queue = queue.LifoQueue()
 data_queue.put("funcoding")
