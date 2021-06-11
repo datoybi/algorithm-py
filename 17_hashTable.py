@@ -20,7 +20,7 @@ def hash_function(key):
 def save_data(data, value):
     index_key = get_key(data)
     hash_address = hash_function(index_key)
-    if hash_table[hash_address] != 0:
+    if hash_table[hash_address] != 0: # key, value가 이미 있으면
         for index in range(hash_address, len(hash_table)):
             if hash_table[index] == 0:
                 hash_table[index] = [index_key, value]

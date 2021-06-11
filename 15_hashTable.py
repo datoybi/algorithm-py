@@ -76,7 +76,7 @@ def get_key(data):
 def hash_function(key):
     return key%8
 
-def save_data(data, value):
+def save_data(data, value): 
     hash_address = hash_function(get_key(data))
     hash_table[hash_address] = value
 
