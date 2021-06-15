@@ -16,8 +16,11 @@
                 4. 해당 Node의 왼쪽 Branch가 삭제할 Node의 왼쪽 Child Node를 가리키게 함
                 5. 해당 Node의 오른쪽 Branch가 삭제할 Node의 오른쪽 Child Node 가리키게 함
                 6. 만약 해당 Node가 오른쪽 Child Node를 가지고 있었을 경우에는, 해당 Node의 본래 Parent의 왼쪽 Branch가 해당 오른쪽 Child Node를 가리키게 함
+
+        3번 - 삭제할 노드의 오른쪽 자식노드중 가장 작은 노드 선택 후 삭제할 노드의 부모노드에 붙인 후 
+                오른쪽 자식노드 중 작은 노드의 왼쪽에 삭제할 노드의 왼쪽 노드들을 붙인다 ! 
 Divide and Conquer! 
-'''
+
 
 class Node:
     def __init__(self, value):
@@ -88,7 +91,7 @@ class NodeMgmt:
             if value < self.parent.value:
                 self.parent.left = self.current_node.left
             else:
-                self.parent.right = self.current_node.left
+                self.parent.right = self.current_node.left # ? 이건 왜 ?
 
         elif self.current_node.left == None and self.current_node.right != None:
             if value < self.parent.value :
@@ -105,7 +108,7 @@ class NodeMgmt:
                 self.change_node = self.current_node.right
                 self.change_node_parent = self.current_node.right
                 while self.change_node.left != None:
-                    self_change_node_parent = self.change_node
+                    self.change_node_parent = self.change_node
                     self.change_node = self.change_node.left
                 if self.change_node.right != None:
                     self.change_node_parent.left - self.change_node.right
@@ -114,29 +117,28 @@ class NodeMgmt:
                 self.parent.left = self.change_node
                 self.change_node.right = self.current_node.right
                 self.change_node.left = self.change_node.left
-        else:         # 3-1-2: 삭제할 노드의 parent node가 왼쪽에 있고, 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 가진 Node의 오른쪽에 Child Node가 있을 때
-            self.change_node = self.current_node.right
-            self.chenge_node_parent = self.current_node.right
-            while self.change_node.left != None:
-                self.change_node_parent = self.change_node
-                self.change_node = self.change_node.left
-            if self.change_node.right != None:
-                self.change_node_parent.left = self.change_node.right
-            else:
-                self.change_node_parent.left = None
-            self.parent.right = self.change_node
-            self.change_node.left = self.current_node.left
-            self.change_node.right = self.current_node.right
+            else:         # 3-1-2: 삭제할 노드의 parent node가 왼쪽에 있고, 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 가진 Node의 오른쪽에 Child Node가 있을 때
+                self.change_node = self.current_node.right
+                self.chenge_node_parent = self.current_node.right
+                while self.change_node.left != None:
+                    self.change_node_parent = self.change_node
+                    self.change_node = self.change_node.left
+                if self.change_node.right != None:
+                    self.change_node_parent.left = self.change_node.right
+                else:
+                    self.change_node_parent.left = None
+                self.parent.right = self.change_node
+                self.change_node.right = self.current_node.right
+                self.change_node.left = self.current_node.left
         return True
 
-'''
+
     random 라이브러리 활용
         random.randint(첫번째 숫자, 마지막 숫자): 첫번째 숫자부터 마지막 숫자 사이에 있는 숫자를 랜덤하게 선택해서 리턴
             예: random.randint(0, 99) : 0~99 사이의 숫자중 특정 수를 랜덤하게 선택하여 리턴
 
 # 0 ~ 999 숫자 중에서 임의로 100개를 추출해서, 이진 탐색 트리에 입력, 검색, 삭제
 
-'''
 import random
 
 # 0 ~ 999 중, 100개의 숫자 랜덤 선택
@@ -167,7 +169,6 @@ for del_num in delete_nums:
     if binary_tree.delete(del_num) == False:
         print('delete failed', del_num)
 
-'''
 # 팁
 종이와 지우개로 rough한 코드를 작성해보고 그림을 그리고 케이스를 테스트해보자 
 시간이 오래걸리지만 이해하기 용이
@@ -186,3 +187,144 @@ for del_num in delete_nums:
 
 
 '''
+
+
+from typing import Counter
+
+
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+    
+class NodeMgmt:
+    def __init__(self, head):
+        self.head = head
+    
+    def insert(self, value):
+        self.current_node = self.head
+        while True:
+            if value < self.current_node.value:
+                if self.current_node.left != None:
+                    self.current_node = self.current_node.left
+                else:
+                    self.current_node.left = Node(value)
+                    break
+            else:
+                if self.current_node.right != None:
+                    self.current_node = self.current_node.right
+                else:
+                    self.current_node.right = Node(value)
+                    break
+        
+    def search(self, value):
+        self.current_node = self.head
+        while self.current_node:
+            if value == self.current_node.value:
+                return True
+            elif value < self.current_node.value:
+                self.current_node = self.current_node.left
+            elif value > self.current_node.value:
+                self.current_node = self.current_node.right
+        return False
+    
+    def delete(self, value):
+        # 삭제할 노드 탐색
+        searched = False
+        self.current_node = self.head
+        self.parent = self.head
+        while self.current_node:
+            if self.current_node.value == value:
+                searched = True
+                break
+            elif value < self.current_node.value:
+                self.parent = self.current_node
+                self.current_node = self.current_node.left
+            else:
+                self.parent = self.current_node
+                self.current_node = self.current_node.right
+
+        if searched == False:
+            return False    
+
+        # case1
+        if  self.current_node.left == None and self.current_node.right == None:
+            if value < self.parent.value:
+                self.parent.left = None
+            else:
+                self.parent.right = None
+        
+        # case2
+        elif self.current_node.left != None and self.current_node.right == None:
+            if value < self.parent.value:
+                self.parent.left = self.current_node.left
+            else:
+                self.parent.right = self.current_node.left
+        elif self.current_node.left == None and self.current_node.right != None:
+            if value < self.parent.value:
+                self.parent.left = self.current_node.right
+            else:
+                self.parent.right = self.current_node.right        
+        
+        # case 3
+        elif self.current_node.left != None and self.current_node.right != None:
+            if value < self.parent.value:
+                self.change_node = self.current_node.right
+                self.change_node_parent = self.current_node.right
+                while self.change_node.left != None:
+                    self.change_node_parent = self.change_node
+                    self.change_node = self.change_node.left
+                if self.change_node.right != None:
+                    self.change_node_parent.left = self.change_node.right
+                else:
+                    self.change_node_parent.left = None
+                self.parent.left = self.change_node
+                self.change_node.right = self.current_node.right
+                self.change_node.left = self.change_node.left
+            # case 3-2
+            else:
+                self.change_node = self.current_node.right
+                self.change_node_parent = self.current_node.right
+                while self.change_node.left != None:
+                    self.change_node_parent = self.change_node
+                    self.change_node = self.change_node.left
+                if self.change_node.right != None:
+                    self.change_node_parent.left = self.change_node.right
+                else:
+                    self.change_node_parent.left = None
+                self.parent.right = self.change_node
+                self.change_node.right = self.current_node.right
+                self.change_node.left = self.current_node.left
+
+        return True
+
+
+import random
+
+bst_nums = set()
+while len(bst_nums) != 100:
+    bst_nums.add(random.randint(0,999))
+
+head = Node(500)
+binary_tree = NodeMgmt(head)
+
+for num in bst_nums:
+    binary_tree.insert(num)
+
+for num in bst_nums:
+    if binary_tree.search(num) == False:
+        print('search failed', num)
+
+delete_nums = set()
+bst_nums = list(bst_nums)
+while len(delete_nums) != 10:
+    delete_nums.add(bst_nums[random.randint(0,99)])
+
+for del_num in delete_nums:
+    if binary_tree.delete(del_num) == False:
+        print('delete failed', del_num)
+         
+
+
+# case3은 도저히 이해가 가질 않는다.. 다음에 복습 다시 해보자!

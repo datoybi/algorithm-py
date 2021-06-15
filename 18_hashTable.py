@@ -11,7 +11,8 @@
 
 import hashlib
 '''
-data = 'test'.encode()
+#SHA1 
+data = 'test'.encode() #바이트로 바꿔준다
 hash_object = hashlib.sha1()
 hash_object.update(b'test') # data
 hex_dig = hash_object.hexdigest()
@@ -32,7 +33,7 @@ def get_key(data):
     hash_object = hashlib.sha256()
     hash_object.update(data.encode())
     hex_dig = hash_object.hexdigest()
-    return int(hex_dig, 16) # 형변환
+    return int(hex_dig, 16) # 16진수 정수로 형변환
 
 def hash_function(key):
     return key%8
