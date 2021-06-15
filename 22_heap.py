@@ -5,7 +5,6 @@
             부모 노드 인덱스 번호(parent node's index) = 자식 노드 인덱스 번호 (child node's index) //2
             왼쪽 자식 노드 인덱스 번호 (left child node's index) = 부모 노드 인덱스 번호 (parent node's index) *2
             오른쪽 자식 노드 인덱스 번호 (right child node's index) = 부모 노드 인덱스 번호 (parent node's index) *2+1
-
 '''
 # 힙의 데이터 삽입
 #  1. 완전 이진트리처럼 데이터 채우기 2. 부모노드와 비교를 해서 부모노드보다 작을 떄 까지 바꿔주는 작업
@@ -17,7 +16,7 @@ class Heap:
         self.heap_array.append(data)
 
     def move_up(self, inserted_idx):
-        if inserted_idx <=1:
+        if inserted_idx <= 1:
             return False
         parent_idx = inserted_idx // 2
         if self.heap_array[inserted_idx] > self.heap_array[parent_idx]:
