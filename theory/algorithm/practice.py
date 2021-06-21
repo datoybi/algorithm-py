@@ -1,15 +1,19 @@
-def bubblesort(data):
-    for i in range(len(data)-1):
-        for j in range(len(data)-i-1):
-            if data[j] > data[j+1]:
-                data[j], data[j+1] = data[j+1], data[j]
+
+def insertion_sort(data):
+    for index in range(len(data)-1):
+        for index2 in range(index+1, 0, -1):
+            if data[index2] < data[index2-1]:
+                data[index2], data[index2-1] = data[index2-1], data[index2]
+            else:
+                break
     return data
 
+'''
 
 import random
-
 data_list = random.sample(range(100), 50)
-
+'''
+data_list = [5,4,3,2,1]
 print(data_list)
-print("-----------------------------")
-print(bubblesort(data_list))
+print(insertion_sort(data_list))
+
