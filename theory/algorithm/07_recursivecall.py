@@ -73,6 +73,7 @@ def palindrome(str):
 
 print(palindrome("level"))
 
+다시 해보기 한번에 성공 못함
 '''
 
 def palindrome(string):
