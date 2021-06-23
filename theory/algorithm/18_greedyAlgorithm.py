@@ -10,7 +10,11 @@
             지불해야 하는 값이 4720원 일때 1원 50원 100원, 500원 동전으로 동전의 수가 가장 적게 지불하시오.
             가장 큰 동전부터 최대한 지불해야 하는 값을 채우는 방식으로 구현 가능
             탐욕 알고리즘으로 매순간 최적이라고 생각되는 경우를 선택하면 됨
-    참고 : coin_list.sort(reverse=True) -> 내림차순으로 정렬
+            
+    참고
+        coin_list.sort(reverse=True) -> 내림차순으로 정렬
+        data_list = sorted(data_list, key=lambda x:x[1]/x[0], reverse=True)
+
 '''
 
 coin_list = [500,100,50,1]
@@ -44,5 +48,34 @@ def min_coin_count(value, coin_list):
 '''
         
 data_list = [(10,10),(15,12),(20,10),(25,8),(30,5)]
-data_list = sorted(data_list, key=lambda x:x[1]/x[0], reverse=True)
-print(data_list)
+
+def get_max_value(data_list, capacity):
+    data_list = sorted(data_list, key=lambda x:x[1]/x[0], reverse=True)
+    total_value = 0
+    details = list()
+
+    for data in data_list:
+        if capacity - data[0] >= 0:
+            capacity -= data[0] # 0보다 크다는 것은 capacity보다 더 작다는 거니까 통째로 넣으면 됨
+            total_value += data[1] # total_value에 가치 통째로 넣기
+            details.append([data[0],data[1],1]) # [무게, 가치, 1(몇프로 넣었는지)]
+        else:
+            fraction = capacity / data[0] # 요부분이 좀 헷갈림
+            # capacity -= data[0] * fraction 당연히 capacity가 0이 되니까 지움
+            total_value += data[1] * fraction
+            details.append([data[0],data[1],fraction])
+            break
+    return total_value, details
+
+
+print(get_max_value(data_list, 30))
+
+
+'''
+탐욕 알고리즘의 한계 
+    탐욕 알고리즘은 근사치 추정에 활용
+    반드시 최적의 해를 구할 수 있는 것은 아니기 때문
+    최적의 해에 가까운 값을 구하는 방법 중의 하나임 
+    예 : 시작 노드에서 시작해서 가장 작은 값을 찾아 leaf node까지 가는 경로를 찾는 경우
+
+'''
