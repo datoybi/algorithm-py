@@ -32,18 +32,20 @@ mygraph = {
 }
 
 def dijkstra(graph, start):
-    distances = {node: float('inf') for node in graph}
-    distances[start] = 0
+    distances = {node: float('inf') for node in graph} # 무한(inf)로 graph 초기화
+    #print("distances : " , distances)
+    distances[start] = 0 # 자기자신('A')은 0으로 초기화
     queue = []
-    heapq.heappush(queue, [distances[start], start]) # 초기화 distance, node
+    heapq.heappush(queue, [distances[start], start]) # 초기화 distance, node, heappush(삽입할 큐, 삽입할 것) 
 
     while queue:
-        current_distance, current_node = heapq.heappop(queue)
+        current_distance, current_node = heapq.heappop(queue) 
 
         if distances[current_node] < current_distance:
             continue
 
         for adjacent, weight in graph[current_node].items():
+            print("**" , adjacent, weight)
             distance = current_distance + weight
 
             if distance < distances[adjacent]: #지금 찾은 값 보다 더 크다면
