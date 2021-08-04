@@ -10,6 +10,7 @@
     python3나 pypy3로 체점하기 
 
     느낀점 : 그냥 문제만 맞춰도 ㄱㅊ하나보다 다장조라 dictionary 만들지 않아도 말이다.
+    https://github.com/ndb796/Fast_Campus_Algorithm_Lecture_Notes
 """
 
 
