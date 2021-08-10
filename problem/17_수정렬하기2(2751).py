@@ -27,7 +27,7 @@
 # for i in qdata:
 #     print(i)
 
-#맞았습니다! 떴음 , 해답 
+#맞았습니다! 떴음 , 해답  실제 시험에서는 이렇게
 # test_case = int(input())
 # data = []
 
