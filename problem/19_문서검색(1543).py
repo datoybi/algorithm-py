@@ -32,3 +32,16 @@
    시간 복잡도 O(NM)의 알고리즘으로 해결할 수 있습니다.
 '''
 
+document = input()
+word = input()
+
+index = 0
+result = 0
+
+while len(document) - index >= len(word):
+   if document[index:index + len(word)] == word:
+      result += 1
+      index += len(word)
+   else:
+      index += 1
+print(result)
