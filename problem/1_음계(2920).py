@@ -52,7 +52,7 @@
 #     print("mixed")
 
 
-# 다시 구현해보기
+# 해답
 arr = input().split(' ')
 arr = list(map(int, arr))
 
@@ -71,3 +71,17 @@ elif descending:
     print("descending")
 else:
     print("mixed")
+
+# 두번째 시도 
+num = list(map(int, input().split(' ')))
+answer = [1,2,3,4,5,6,7,8]
+r_answer = list(reversed(answer))
+
+if num == answer:
+    print('ascending')
+elif num == r_answer:
+    print('descending')
+else:
+    print('mixed')
+
+

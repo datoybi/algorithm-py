@@ -21,6 +21,9 @@ study Data structure and Algorithm with fast campus
     * list.sort() 
     * sorted(list) 
 
+* 역정렬 
+    * r_answer = list(reversed(answer)) # list()에 감싸야한다
+
 * lambda 인자 : 표현식 
     * (lambda x,y : x+y)(10, 20) # 30 
     * array = sorted(array, key=lambda x:x[0]) 
@@ -44,4 +47,9 @@ study Data structure and Algorithm with fast campus
 * while문 
     * hile(bird): # 0이 되면 나가짐 
 
+* max()
+    * 최대값을 찾는 내장함수
+    max([1, 2, 3]) # 3
+    max(10, 20) # 20
+    
 

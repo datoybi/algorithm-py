@@ -48,3 +48,18 @@ print(result)
     2. 난 max()를 몰라서 나머지를 비교해서 나머지가 작은 쪽을 기존 나머지에 대입하는 방식으로 하려 했으나 max라는 좋은 함수가 있었음을 몰랐음
     3. 기본로직은 비슷하게 잘 맞았음 칭찬함.
 '''
+
+# 두번째 시도
+N,M = map(int, input().split(' '))
+arr = list(map(int, input().split(' ')))
+result = 0
+
+for i in range (len(arr)): # 0~4
+    for j in range (i+1, len(arr)): # 1~4
+        for z in range (j+1, len(arr)): # 2~4
+            temp = arr[i]+arr[j]+arr[z]
+            if temp <= M:
+                if result < temp:
+                    result = temp
+
+print(result)
