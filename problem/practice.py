@@ -1,13 +1,24 @@
-# N,M = map(int, input().split(' '))
-# arr = list(map(int, input().split(' ')))
-# result = 0
+arr = []
+ordered_list = []
+n = int(input())
+index = 0
 
-# for i in range (len(arr)): # 0~4
-#     for j in range (i+1, len(arr)): # 1~4
-#         for z in range (j+1, len(arr)): # 2~4
-#             temp = arr[i]+arr[j]+arr[z]
-#             if temp <= M:
-#                 if result < temp:
-#                     result = temp
+for i in range(n):
+    arr.append(int(input()))
+    ordered_list.append(i+1)
 
-# print(result)
+print(arr)
+print(ordered_list)
+
+while(ordered_list):
+
+    if arr[0] != ordered_list[index]:
+        print('+')
+        index+=1
+        
+    elif arr[0] == ordered_list[index]:
+        print('+')
+        print('-')
+        del arr[0]
+        del ordered_list[index];
+        index-=1

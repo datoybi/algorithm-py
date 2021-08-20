@@ -1,7 +1,7 @@
 # Datastructure-and-Algorithm
 study Data structure and Algorithm with fast campus
 
-## Phython 문법 정리
+## Python 문법 정리
 ### 계속 정리해 나갈 예정 (마지막 업데이트: 21.08.19)
 
 * range(start, stop, step) 마지막 인자는 숫자의 간격을 의미 
@@ -49,7 +49,7 @@ study Data structure and Algorithm with fast campus
 
 * max()
     * 최대값을 찾는 내장함수
-    max([1, 2, 3]) # 3
-    max(10, 20) # 20
-    
+    \`max([1, 2, 3]) # 3\`
+    \`max(10, 20) # 20\`
+
 
