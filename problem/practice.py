@@ -1,24 +1,23 @@
-arr = []
-ordered_list = []
-n = int(input())
-index = 0
+n = int(input()) 
+result = []
+stack = []
+count = 1
 
-for i in range(n):
-    arr.append(int(input()))
-    ordered_list.append(i+1)
+for i in range(1, n+1):
+    print('count : ' , count)
+    data = int(input())
+    print('data : ' , data)
 
-print(arr)
-print(ordered_list)
+    while count <= data:
+        stack.append(count)
+        count += 1
+        result.append('+')
+    if stack[-1] == data:
+        stack.pop()
+        result.append('-')
+    else :
+        print('NO')
+        exit(0)
 
-while(ordered_list):
-
-    if arr[0] != ordered_list[index]:
-        print('+')
-        index+=1
-        
-    elif arr[0] == ordered_list[index]:
-        print('+')
-        print('-')
-        del arr[0]
-        del ordered_list[index];
-        index-=1
+for i in result:
+    print(i)

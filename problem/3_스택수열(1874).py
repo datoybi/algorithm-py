@@ -108,3 +108,4 @@ while(ordered_list):
         del arr[0]
         del ordered_list[index];
         index-=1
+# count를 잘 이해 못하겠음 ㅠ
