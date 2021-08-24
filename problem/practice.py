@@ -1,23 +1,34 @@
-n = int(input()) 
-result = []
-stack = []
-count = 1
+test_case = int(input())
+# left = []
+# right = []
 
-for i in range(1, n+1):
-    print('count : ' , count)
-    data = int(input())
-    print('data : ' , data)
+# for i in range(test_case):
+#     data.append(input());
 
-    while count <= data:
-        stack.append(count)
-        count += 1
-        result.append('+')
-    if stack[-1] == data:
-        stack.pop()
-        result.append('-')
-    else :
-        print('NO')
-        exit(0)
+# print(data)
 
-for i in result:
-    print(i)
+for j in range(test_case):
+    data = input()
+    left = []
+    right = []
+
+    for i in data:
+        # print('left : ' , left, ' , right : ' , right)
+        # print(data[i])
+        if i == '<':
+            if left:
+                right.append(left.pop())
+                # left.pop()
+        elif i == '>':
+            if right:
+                left.append(right.pop())
+                # right.pop()
+        elif i == '-':
+            if left:
+                left.pop()
+        else:
+            left.append(i)
+    left.append(left)
+
+    print(''.join(left))
+# print('right : ' , right)
