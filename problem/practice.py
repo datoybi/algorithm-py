@@ -1,34 +1,13 @@
-test_case = int(input())
-# left = []
-# right = []
+# arr = [ (21,'b'), (21,'a')]
 
-# for i in range(test_case):
-#     data.append(input());
+arr = [(21,'Junkyu'), (21,'Dohyun'),(20,'Sunyoung')]
+min = arr[0][0]
 
-# print(data)
-
-for j in range(test_case):
-    data = input()
-    left = []
-    right = []
-
-    for i in data:
-        # print('left : ' , left, ' , right : ' , right)
-        # print(data[i])
-        if i == '<':
-            if left:
-                right.append(left.pop())
-                # left.pop()
-        elif i == '>':
-            if right:
-                left.append(right.pop())
-                # right.pop()
-        elif i == '-':
-            if left:
-                left.pop()
-        else:
-            left.append(i)
-    left.append(left)
-
-    print(''.join(left))
-# print('right : ' , right)
+for i in arr:
+    # min = arr[i][0]
+    if min > arr[i][0]:
+        min = arr[i][0]
+    elif min == arr[i][0]:
+        print(arr[i][0], ' ', arr[i][1])
+    
+    print()

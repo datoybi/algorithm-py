@@ -58,3 +58,5 @@ array.sort()
 
 for i in array:
     print(i)
+
+# 완벽히 일치하게 두번째 시도에서 품 

@@ -35,3 +35,17 @@ for i in range(9,-1,-1): # range(start, stop, step) 마지막 인자는 숫자�
     for j in array:
         if int(j) == i:
             print(i, end='')
+
+
+# 두번쨰 시도 - 정답 
+n = input()
+n = list(map(int, n))
+
+n.sort()
+reversed_n = list(reversed(n))
+
+reversed_n = list(map(str,reversed_n))
+
+for i in reversed_n:
+    print(i, end='')
+

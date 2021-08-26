@@ -37,9 +37,9 @@
 #     left_stack.extend(reversed(right_stack))
 #     print(''.join(left_stack))
     
-case = int(input())
+test_case = int(input())
 
-for _ in range(case):
+for _ in range(test_case):
     right_stack = []
     left_stack = []
     data = input()

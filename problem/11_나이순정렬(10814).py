@@ -46,3 +46,5 @@ array = sorted(array, key=lambda x: x[0]) #? 키가 무슨 소용
 # array = sorted(array)
 for i in array:
     print(i[0], i[1])
+
+# 두번쨰시도 - 실패 
