@@ -2,7 +2,7 @@
 study Data structure and Algorithm with fast campus
 
 ## Python 문법 정리
-### 계속 정리해 나갈 예정 (마지막 업데이트: 21.08.19)
+### 계속 정리해 나갈 예정 (마지막 업데이트: 21.08.30)
 
 * range(start, stop, step) 마지막 인자는 숫자의 간격을 의미 
     * for i in range(9,-1,-1): # 9~0 
@@ -11,7 +11,7 @@ study Data structure and Algorithm with fast campus
 * 개행 없이 프린트 
     * print(i, end='') 
 
-* sawp 
+* swap 
     * array[i], array[max] = array[max], array[i] 
 
 * 개행 한번 하고 프린트 하고싶을때 
@@ -91,8 +91,15 @@ def hap(x, y):
 
 print(hap(10,20))
 
-# lambda 매개변수 : 실행문
+* lambda 매개변수 : 실행문
 print((lambda x,y: x+y)(10, 20))
 
 func = (lambda x: x+1)
 print(func(4)) #5
+
+* input() 보다 sys.stdin.readline()이 좀 더 빠르고 메모리도 적게 소모한다.
+* array를 0으로 채우기
+  * test[0] * 10 // [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  * array[0] * 10001 
+
+* Python3는 pypy3보다 느리다, pypy3는 Python3보다 빠르지만 메모리를 많이 먹는다.

@@ -26,3 +26,15 @@ while n > 0:
     n -= 1
 
 print(a)
+
+# 두번째 시도 이렇게 해서 안됐다 또 시간초과.. 
+# 시간초과 안되는 걸로 해봤는데 이해 될랑말랑함ㅠ
+
+n = int(input())
+
+def fibonacci(n):
+    if n <= 1:
+        return n
+    return fibonacci(n-1) + fibonacci(n-2)
+
+print(fibonacci(n))

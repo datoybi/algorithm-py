@@ -41,7 +41,29 @@ for i in range(n): # 입력
 
 for i in range(10001): # 출력 
     if array[i] != 0:
-        for j in range(array[i]):
-            print(j)
+        for _ in range(array[i]):
+            print(i)
 
+
+# 두번째 시도에서도 메모리 초과가 난다. - 답지 보고 이해한 뒤 함 - 
+# 근데 while문을 썼는데 메모리 초과가 뜸.. 왜인지는 모르겠다.
+import sys
+
+n = int(sys.stdin.readline())
+array = [0] * 10001
+
+# print(array)
+
+# 입력
+for i in range(n): 
+    data = int(sys.stdin.readline())
+    array[data] += 1
+
+# print(array)
+
+# 출력
+for i in range(10001):
+    while array[i] != 0:
+        print(i)
+        array[i] -= 1
 

@@ -21,7 +21,7 @@ def qsort(data):
     left, right = list(), list()
     pivot = data[0]
 
-    for index in range(1, len(data)):
+    for index in range(1, len(data)): # 왜 0부터 시작하면 에러 날까? 잘 모르겟곘
         if pivot > data[index]:
             left.append(data[index])
         else:

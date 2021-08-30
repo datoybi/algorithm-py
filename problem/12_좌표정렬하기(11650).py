@@ -23,3 +23,16 @@ array = sorted(array)
 
 for i in array:
     print(i[0], i[1])
+
+
+# 두번째 시도 - 정답 - 정답과 거의 유사하다
+array = list()
+n = int(input())
+
+for _ in range(n):
+    x, y = map(int, input().split(' '))
+    array.append((x,y))
+
+array.sort()
+for i in array:
+    print(i[0] , i[1])
