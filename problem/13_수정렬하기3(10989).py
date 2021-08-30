@@ -43,3 +43,5 @@ for i in range(10001): # 출력
     if array[i] != 0:
         for j in range(array[i]):
             print(j)
+
+

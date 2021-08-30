@@ -49,7 +49,50 @@ study Data structure and Algorithm with fast campus
 
 * max()
     * 최대값을 찾는 내장함수
-    \`max([1, 2, 3]) # 3\`
-    \`max(10, 20) # 20\`
+    * max([1, 2, 3]) # 3
+    * max(10, 20) # 20
 
 
+* X in S, X not in S 
+	* X in S : S안에 X가 있다면 참 
+	* X not in S : S안에 X가 없다면 참 (이때 S는 리스트, 튜플, 문자열)
+
+* Set
+	* 중복을 허용하지 않는다.
+	* 순서가 없다. (리스트나 튜플은 순서가 있다)
+	set2 = set('Hello')
+	set2 # {'e', 'H', 'l', 'o'}
+	-> Set 자료형에 인덱싱으로 접근하려면, 튜플로 변환 한 후 접근해야 한다 (s1 = set([1,2,3]) l1 = list(s1))
+	* set자료형으로 교집합 구하기 (s1 & s2)
+	* set자료형으로 합집합 구하기 (s1 | s2)
+	* set자료형으로 차집합 구하기 (s1 - s2)
+	* 값추가 (add) 
+ 		s1 = set([1, 2, 3]) 
+		s1.add(4)
+		s1 # {1, 2, 3, 4}
+	* 값 여러개 추가하기 (update)
+		s1 = set([1, 2, 3])
+		s1.update([4, 5, 6])
+		s1 # {1, 2, 3, 4, 5, 6}
+	* 특정 값 제거하기 (remove)
+		s1 = set([1, 2, 3])
+		s1.remove(2)
+		s1 # {1, 3}
+	
+	reference : https://wikidocs.net/1015
+
+* 문자열을 한글자씩 끊어서 리스트로 바꾸기 
+	str = "hello"
+	print(list(str))
+
+* 람다식
+def hap(x, y):
+    return x+y
+
+print(hap(10,20))
+
+# lambda 매개변수 : 실행문
+print((lambda x,y: x+y)(10, 20))
+
+func = (lambda x: x+1)
+print(func(4)) #5

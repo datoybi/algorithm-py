@@ -60,3 +60,22 @@ for i in array:
     print(i)
 
 # 완벽히 일치하게 두번째 시도에서 품 
+
+#세번째 시도 - 내장함수 안써서
+
+n = int(input())
+n_list = []
+min_list = []
+
+for _ in range(n):
+    n_list.append(int(input()))
+
+for i in range(len(n_list)):
+    min = i
+    for j in range(i+1, len(n_list)):
+        if n_list[min] > n_list[j]:
+            min = j;
+    n_list[min], n_list[i] = n_list[i], n_list[min]
+
+for item in n_list:
+    print(item)
