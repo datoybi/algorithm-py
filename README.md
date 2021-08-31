@@ -3,55 +3,55 @@ study Data structure and Algorithm with fast campus
 
 ## Python 문법 정리
 ### 계속 정리해 나갈 예정 (마지막 업데이트: 21.08.30)
---------
+
 
 * range(start, stop, step) 마지막 인자는 숫자의 간격을 의미 
-    <pre><code>  for i in range(9,-1,-1): # 9~0 
+    ><pre><code>  for i in range(9,-1,-1): # 9~0 
 	for i in range(0,5): # 0,1,2,3,4</pre></code>
 
 * 개행 없이 프린트 
-    <pre><code>print(i, end='')</code></pre>
+    ><pre><code>print(i, end='')</code></pre>
 
 * swap 
-    <pre><code>array[i], array[max] = array[max], array[i]</code></pre>
+    ><pre><code>array[i], array[max] = array[max], array[i]</code></pre>
 
 * 개행 한번 하고 프린트 하고싶을때 
-       ```print('\n'.join(result)) ```
+	<pre><code>print('\n'.join(result))</code></pre>
 
 * 정렬 
-    * list.sort() 
-    * sorted(list) 
+    <pre><code>  list.sort() 
+    sorted(list) </code></pre>
 
 * 역정렬 
-    * r_answer = list(reversed(answer)) # list()에 감싸야한다
+    <pre><code> r_answer = list(reversed(answer)) #list()에 감싸야한다</code></pre>
 
 * lambda 인자 : 표현식 
-    * (lambda x,y : x+y)(10, 20) # 30 
-    * array = sorted(array, key=lambda x:x[0]) 
+    <pre><code>  (lambda x,y : x+y)(10, 20) # 30 
+    array = sorted(array, key=lambda x:x[0]) </code></pre>
 
 * 튜플 ? 
-    * 리스트는 []으로 둘러싸지만 튜플은 ()으로 둘러싼다. 
-    * 리스트는 그 값의 생성, 삭제, 수정이 가능하지만 튜플은 그 값을 바꿀 수 없다. 
+    > 리스트는 []으로 둘러싸지만 튜플은 ()으로 둘러싼다.<br>
+    > 리스트는 그 값의 생성, 삭제, 수정이 가능하지만 튜플은 그 값을 바꿀 수 없다. 
 
 * sys.stdin.readline() 
-    * 데이터의 개수가 많을 때 파이썬에서는 sys.stdin.readline()을 사용 
+    > 데이터의 개수가 많을 때 파이썬에서는 sys.stdin.readline()을 사용 
 
 * 3개의 변수에 입력값 할당 
-    * n, r, c = map(int, input().split(' ')) 
+    <pre><code> n, r, c = map(int, input().split(' ')) </code></pre>
 
 * list에 int형 input value 넣기 
-    * data = list(map(int, input().split(' '))) 
+    <pre><code> data = list(map(int, input().split(' '))) </code></pre>
 
 * 두 변수에 int형 input 넣을때  
-    * num, order = map(int, input().split(' ')) 
+    <pre><code> num, order = map(int, input().split(' ')) </code></pre>
 
 * while문 
     * hile(bird): # 0이 되면 나가짐 
 
 * max()
     * 최대값을 찾는 내장함수
-    * max([1, 2, 3]) # 3
-    * max(10, 20) # 20
+    <pre><code> max([1, 2, 3]) # 3
+    max(10, 20) # 20</code></pre>
 
 
 * X in S, X not in S 
@@ -59,8 +59,8 @@ study Data structure and Algorithm with fast campus
 	* X not in S : S안에 X가 없다면 참 (이때 S는 리스트, 튜플, 문자열)
 
 * Set
-	* 중복을 허용하지 않는다.
-	* 순서가 없다. (리스트나 튜플은 순서가 있다)
+	> 중복을 허용하지 않는다.
+순서가 없다. (리스트나 튜플은 순서가 있다)
 	set2 = set('Hello')
 	set2 # {'e', 'H', 'l', 'o'}
 	-> Set 자료형에 인덱싱으로 접근하려면, 튜플로 변환 한 후 접근해야 한다 (s1 = set([1,2,3]) l1 = list(s1))
