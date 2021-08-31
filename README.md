@@ -3,19 +3,20 @@ study Data structure and Algorithm with fast campus
 
 ## Python 문법 정리
 ### 계속 정리해 나갈 예정 (마지막 업데이트: 21.08.30)
+--------
 
 * range(start, stop, step) 마지막 인자는 숫자의 간격을 의미 
-    * for i in range(9,-1,-1): # 9~0 
-    * for i in range(0,5): # 0,1,2,3,4 
+    <pre><code>  for i in range(9,-1,-1): # 9~0 
+	for i in range(0,5): # 0,1,2,3,4</pre></code>
 
 * 개행 없이 프린트 
-    * print(i, end='') 
+    <pre><code>print(i, end='')</code></pre>
 
 * swap 
-    * array[i], array[max] = array[max], array[i] 
+    <pre><code>array[i], array[max] = array[max], array[i]</code></pre>
 
 * 개행 한번 하고 프린트 하고싶을때 
-    * print('\n'.join(result)) 
+       ```print('\n'.join(result)) ```
 
 * 정렬 
     * list.sort() 
