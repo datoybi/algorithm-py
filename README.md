@@ -7,27 +7,27 @@
 ### 계속 정리해 나갈 예정 (마지막 업데이트: 21.08.31)
 
 
-* range(start, stop, step) 마지막 인자는 숫자의 간격을 의미 
+🔹 range(start, stop, step) 마지막 인자는 숫자의 간격을 의미 
     <pre><code>  for i in range(9,-1,-1): # 9~0 
 	for i in range(0,5): # 0,1,2,3,4</pre></code>
 
-* 개행 없이 프린트 
+🔹 개행 없이 프린트 
     <pre><code>print(i, end='')</code></pre>
 
-* swap 
+🔹 swap 
     <pre><code>array[i], array[max] = array[max], array[i]</code></pre>
 
-* 개행 한번 하고 프린트 하고싶을때 
+🔹 개행 한번 하고 프린트 하고싶을때 
 	<pre><code>print('\n'.join(result))</code></pre>
 
-* 정렬 
+🔹 정렬 
     <pre><code>  list.sort() 
     sorted(list) </code></pre>
 
-* 역정렬 
+🔹 역정렬 
     <pre><code> r_answer = list(reversed(answer)) #list()에 감싸야한다</code></pre>
 
-* lambda 인자 : 표현식 
+🔹 lambda 인자 : 표현식 
     <pre><code>  (lambda x,y : x+y)(10, 20) # 30 
     array = sorted(array, key=lambda x:x[0]) </code></pre>
 
@@ -38,25 +38,25 @@
 * sys.stdin.readline() 
     > 데이터의 개수가 많을 때 파이썬에서는 sys.stdin.readline()을 사용 
 
-* 3개의 변수에 입력값 할당 
+🔹 3개의 변수에 입력값 할당 
     <pre><code> n, r, c = map(int, input().split(' ')) </code></pre>
 
-* list에 int형 input value 넣기 
+🔹 list에 int형 input value 넣기 
     <pre><code> data = list(map(int, input().split(' '))) </code></pre>
 
-* 두 변수에 int형 input 넣을때  
+🔹 두 변수에 int형 input 넣을때  
     <pre><code> num, order = map(int, input().split(' ')) </code></pre>
 
-* while문 
+🔹 while문 
     <pre><code>hile(bird): # 0이 되면 나가짐 </code></pre>
 
-* max()
-    * 최대값을 찾는 내장함수
+🔹 max()
+    🔹 최대값을 찾는 내장함수
     <pre><code> max([1, 2, 3]) # 3
     max(10, 20) # 20</code></pre>
 
 
-* X in S, X not in S 
+🔹 X in S, X not in S 
 	> X in S : S안에 X가 있다면 참 <br>
 	> X not in S : S안에 X가 없다면 참 (이때 S는 리스트, 튜플, 문자열)
 
@@ -85,23 +85,23 @@
 	
 	 *reference : https://wikidocs.net/1015*
 
-* 문자열을 한글자씩 끊어서 리스트로 바꾸기 
+🔹 문자열을 한글자씩 끊어서 리스트로 바꾸기 
 	<pre><code>  str = "hello"
 	print(list(str))</code></pre>
 
-* 람다식
+🔹 람다식
 	<pre><code>  def hap(x, y):
 	return x+y
 	print(hap(10,20))</code></pre>
 
-* lambda 매개변수 : 실행문<br>
+🔹 lambda 매개변수 : 실행문<br>
 	<pre><code>  print((lambda x,y: x+y)(10, 20))
 	func = (lambda x: x+1)
 	print(func(4)) #5</code></pre>
 
-* input() 보다 sys.stdin.readline()이 좀 더 빠르고 메모리도 적게 소모한다.
-* array를 0으로 채우기
+🔹 input() 보다 sys.stdin.readline()이 좀 더 빠르고 메모리도 적게 소모한다.
+🔹 array를 0으로 채우기
   <pre><code>    test[0] * 10 // [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
   	array[0] * 10001 </code></pre>
 
-* Python3는 pypy3보다 느리다, pypy3는 Python3보다 빠르지만 메모리를 많이 먹는다.
+🔹 Python3는 pypy3보다 느리다, pypy3는 Python3보다 빠르지만 메모리를 많이 먹는다.
