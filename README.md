@@ -1,8 +1,10 @@
 # Datastructure-and-Algorithm
-study Data structure and Algorithm with fast campus
+*코딩테스트 준비를 위한 알고리즘&자료구조 연습*<br>
+*fast campus의 "알고리즘 / 기술면접 완전 정복 올인원 패키지 Online" 수강*
+
 
 ## Python 문법 정리
-### 계속 정리해 나갈 예정 (마지막 업데이트: 21.08.30)
+### 계속 정리해 나갈 예정 (마지막 업데이트: 21.08.31)
 
 
 * range(start, stop, step) 마지막 인자는 숫자의 간격을 의미 
@@ -61,9 +63,10 @@ study Data structure and Algorithm with fast campus
 * Set
 	> 중복을 허용하지 않는다.<br>
 	> 순서가 없다. (리스트나 튜플은 순서가 있다)<br>
-	> set2 = set('Hello')<br>
-	> set2 # {'e', 'H', 'l', 'o'}<br>
-	> -> Set 자료형에 인덱싱으로 접근하려면, 튜플로 변환 한 후 접근해야 한다<br> (s1 > = set([1,2,3]) l1 = list(s1))<br><br>
+	> ```set2 = set('Hello')```<br>
+	> ```set2 # {'e', 'H', 'l', 'o'}```<br>
+	> -> Set 자료형에 인덱싱으로 접근하려면, 튜플로 변환 한 후 접근해야 한다<br> 
+	>```(s1 > = set([1,2,3]) l1 = list(s1))```<br><br>
 	> set자료형으로 교집합 구하기 ```(s1 & s2)```<br>
 	> set자료형으로 합집합 구하기 ```(s1 | s2)```<br>
 	> set자료형으로 차집합 구하기 ```(s1 - s2)```<br>
@@ -80,7 +83,7 @@ study Data structure and Algorithm with fast campus
  	>	>	>		s1.remove(2)
  	>	>	>		s1 # {1, 3}
 	
-	reference : https://wikidocs.net/1015
+	 *reference : https://wikidocs.net/1015*
 
 * 문자열을 한글자씩 끊어서 리스트로 바꾸기 
 	<pre><code>  str = "hello"
