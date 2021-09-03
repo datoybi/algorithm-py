@@ -44,3 +44,5 @@ for _ in range(test_case):
         if eval(string.replace(" ", "")) == 0:
             print(string)
     print()
+
+#두번쨰 시도 : 못품 

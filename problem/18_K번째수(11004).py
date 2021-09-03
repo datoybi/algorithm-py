@@ -14,3 +14,11 @@ data = list(map(int, input().split(' ')))
 s_data = sorted(data)
 
 print(s_data[order-1])
+
+# 두번쨰 시도 
+n, k = map(int, input().split(' '))
+array = list(map(int, input().split(' ')))
+array.sort()
+
+print(array[k-1])
+
