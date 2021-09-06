@@ -1,15 +1,14 @@
-array = input()
-test = input()
-n = len(test)
+N = int(input())
+num = 1
 result = 0
 
-array.lstrip(test)
-print(array)
+while N:
+    if N < num:
+        num = 1
+    else:        
+        N = N-num
+        print(num , N)
+        num += 1
+        result += 1
 
-# while array:
-#     index = 0
-#     if array[:n] == test:
-#         result += 1
-
-
-
+print(result)

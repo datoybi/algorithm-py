@@ -19,10 +19,8 @@
 #      else:
 #         sentence = sentence.replace(sentence[0], '', 1)
 #       #   print(sentence)
-        
-
+      
 # print(n)
-
 
 #해답
 '''
@@ -44,4 +42,20 @@ while len(document) - index >= len(word):
       index += len(word)
    else:
       index += 1
+print(result)
+
+# 두번쨰시도 - 인강 듣고 스스로 품
+
+document = input()
+word = input()
+
+index = 0
+result = 0
+
+while len(document)-index >= len(word):
+    if document[index:len(word)+index] == word:
+        index = index+len(word)
+        result += 1
+    else:
+        index += 1
 print(result)
