@@ -1,14 +1,17 @@
-N = int(input())
-num = 1
-result = 0
+books = {}
+n = int(input())
+arranged = list()
 
-while N:
-    if N < num:
-        num = 1
-    else:        
-        N = N-num
-        print(num , N)
-        num += 1
-        result += 1
+for _ in range(n):
+    book = input()
+    if book not in books:
+        books[book] = 1
+    else:
+        books[book] += 1
+    target = max(books.values())
+    
+    for book, number in books.items():
+        if number == target:
+            arranged.append(book)
 
-print(result)
+print(sorted(arranged)[0])

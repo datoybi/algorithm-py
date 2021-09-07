@@ -105,3 +105,33 @@
   	array[0] * 10001 </code></pre>
 
 🔹 Python3는 pypy3보다 느리다, pypy3는 Python3보다 빠르지만 메모리를 많이 먹는다.
+
+🔹 dictionary
+* 기본 모습 
+	* key : value 쌍으로 이루어져 있음
+<pre><code> dic = {'name':'pey', 'phone':'0119993323', 'birth': '1118'}</code></pre>
+* 쌍 추가 
+<pre><code>a = {1: 'a'}
+a[2] = 'b'
+a # {1: 'a', 2: 'b'}</code></pre>
+* 삭제
+<pre><code>del a[1]</code></pre>
+* key를 사용해 value 얻기
+<pre><code>grade = {'pey': 10, 'julliet': 99}
+grade['pey'] # 10
+grade['julliet'] # 99</code></pre>
+
+* 반복문 사용
+
+<pre><code>for book, number in books.items(): # key, value 반복문
+if number == target: 
+arranged.append(book)
+# target = max(books.values())
+
+</code></pre>
+
+* 주의사항 
+	* key는 고유값이므로 중복되는 key값을 설정해 놓으면 나머지 것들이 모두 무시된다는점을 주의해야한다.
+
+
+not in , max()
