@@ -17,15 +17,19 @@ for _ in range(n):
 
 left = 1
 right = 1
+max = array[0]
 # print(left , right)
 
 for i in range(0, len(array)-1):
-    if array[i] <= array[i+1]:
+    if max < array[i+1]:
         left += 1
 
-for i in range(len(array)-1, 0, -1):
-    if array[i] <= array[i-1]:
+for i in range(0, len(array)-1):
+    if max > array[i-1]:
         right += 1
+# for i in range(len(array)-1, 0, -1):
+#     if array[i] <= array[i-1]:
+#         right += 1
     # print(i, i-1)
 
 print(left)
