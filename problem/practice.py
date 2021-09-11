@@ -14,18 +14,19 @@ class NodeMgmt:
     def insert(self, value):
         self.current_node = self.head
         while True:
-            if value < self.current_node.value: # current_node가 더 크다면 
-                if self.current_node.left != None: # if is there any child node,
-                      self.current_node = self.current_node.left
-                else:
+            if value < self.current_node.value: # current_node.value 가 더 크면 -> 왼쪽
+                if self.current_node.left == None:
                     self.current_node.left = Node(value)
                     break
-            else: # current_node가 더 작다면
-                if self.current_node.right != None:
-                    self.current_node = self.current_node.right
-                else: 
+                else:
+                 self.current_node = self.current_node.left
+
+            elif value >= self.current_node.value: # current_node.value가 더 작으면 -> 오른쪽
+                if self.current_node.right == None:
                     self.current_node.right = Node(value)
                     break
+                else:
+                    self.current_node = self.current_node.right
     
     def search(self, value):
         self.current_node = self.head
@@ -34,9 +35,11 @@ class NodeMgmt:
                 return True
             elif value < self.current_node.value:
                 self.current_node = self.current_node.left
-            else:
+            elif value >= self.current_node.value:
                 self.current_node = self.current_node.right
         return False
+
+
 
 
 head = Node(1)
