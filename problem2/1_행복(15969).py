@@ -11,9 +11,8 @@ min = lst[0]
 max = lst[-1]
 print(max-min)
 
-
 '''
 
+# 강사 코드
 N, lst = input(), list(map(int, input().split()))
-
 print(max(lst)-min(lst))
