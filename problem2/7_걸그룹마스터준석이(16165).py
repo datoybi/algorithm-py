@@ -39,7 +39,7 @@ for i in answer: # 정답 출력
 #           ['twice', 'momo'], 
 #           ['twice', 'chaeyoung'],
 #           ['twice', 'jeongyeon'], 
-#           ['twice', 'tzuyu'],\
+#           ['twice', 'tzuyu'],
 #            ['twice', 'sana'], 
 #           ['twice', 'nayeon'],
 #            ['blackpink', 'jisu'], 
