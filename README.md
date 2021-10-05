@@ -89,6 +89,11 @@
 	<pre><code>  str = "hello"
 	print(list(str))</code></pre>
 
+🔹	변수 출력시 공백 제거하고싶을 떄 
+	<pre><code>print("Cube = ",a,", Triple = (",b,",",c,",",d,")", sep="")
+	print(f"Cube = {a}, Triple = ({b},{c},{d})")</code></pre>
+
+
 🔹 람다식
 	<pre><code>  def hap(x, y):
 	return x+y
@@ -134,4 +139,5 @@ arranged.append(book)
 	* key는 고유값이므로 중복되는 key값을 설정해 놓으면 나머지 것들이 모두 무시된다는점을 주의해야한다.
 
 
-not in , max()
+🔹 승 구하기
+ <pre><code>print(2**3) #2*2*2=8</code></pre>
