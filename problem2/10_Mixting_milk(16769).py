@@ -6,7 +6,7 @@
 
     용량 : C 우유의 양 3 X3개
 
-'''
+
 A_Capacity, A_Amount = map(int,input().split(' '))
 B_Capacity, B_Amount = map(int,input().split(' '))
 C_Capacity, C_Amount = map(int,input().split(' '))
@@ -59,3 +59,22 @@ while(count <= 4):
     print(A_Amount , B_Amount , C_Amount, count)
 
 print(A_Amount , B_Amount , C_Amount, count)
+
+'''
+
+# 강사코드
+
+C, M = list(), list()
+# 우유와 용량을 따로 관리 -> 가독성을 높임 
+for i in range(3):
+    a, b = map(int, input().split())
+    C.append(a)
+    M.append(b)
+
+for i in range(100):
+    idx = i % 3 # 0, 1, 2
+    nxt = (idx + 1) % 3
+    M[idx], M[nxt] = max(M[idx] - (C[nxt] - M[nxt]), 0), min(C[nxt], M[nxt] + M[idx]) # 다 주거나 남으면 이만큼 남음
+
+for i in M:
+    print(i)
