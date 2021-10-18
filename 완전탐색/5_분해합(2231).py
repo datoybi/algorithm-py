@@ -1,24 +1,18 @@
-# N = list(input())
-# result = 0
+# 맞았습니다
 
-test = '216'
-test_list = list(test)
-# result = 0
-# print(test_list)
+N = int(input())
+result = 0
 
-# for i in test_list:
-#     result += int(i)
-# result + int(test)
+for i in range(1, 1000001):
+    result = i
+    i_lst = list(map(int, str(i)))
+    result += sum(i_lst[0:])
+    
+    if result == N:
+        print(i)
+        exit(0)
 
-
-# print(result)
-
-for i in range(1, 1000):
-    result = 0
-    i_lst = list(str(i))
-    # print(i_lst)
-    # i_lst[0:]
-    result += sum(i_lst[0:]) # 여기서 str로 선언했기 때문에 int로 형변환 후 슬라이싱을 진행해야 할 것 같다 =.
+print('0')
     
     # for j in i_lst:
     #     result += j
@@ -27,6 +21,14 @@ for i in range(1, 1000):
     #     print('216')
 
 
+# result = 0
+# i_lst = list(test)
+# result = int(test)
+# # print(i_lst)
+# # i_lst[0:]
+# i_lst = list(map(int, i_lst))
+# result += sum(i_lst[0:])
+# print(result)
 
 # lst = [1,2,3] # 6+1+2+3 = 12
 # print(sum(lst[0:]))
