@@ -141,3 +141,8 @@ arranged.append(book)
 
 🔹 승 구하기
  <pre><code>print(2**3) #2*2*2=8</code></pre>
+
+
+🔹 문자열 뒤집기
+ <pre><code>s = '61'
+print(s[::-1]) # 16</code></pre>
