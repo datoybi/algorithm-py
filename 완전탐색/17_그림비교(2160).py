@@ -1,19 +1,26 @@
 '''
-서로 다른 칸의 개수가 가장 작은 경우를 찾기
-
-N
-2 <= N <= 50 
-5 X 7
+맞왜틀!!!
 '''
 N = int(input())
-lst = list()
+pic = list() 
+minimum, ans1, ans2= 36, 0, 0
 
 for _ in range(0,N):
+    row = []
     for i in range(0,5):
-        lst.append(list(input()))
+        row.append(input())
+    pic.append(row)
 
+for pic1 in range(0,N):
+    for pic2 in range(pic1+1,N):
+        cnt = 0
+        for i in range(0, 5):
+            for j in range(0,7): 
+                if pic[pic1][i][j] != pic[pic2][i][j]:
+                    cnt += 1
+        if minimum > cnt :
+            minimum = cnt
+            ans1 = pic1
+            ans2 = pic2
 
-#[['.', '.', 'X', '.', '.', '.', '.'], ['.', 'X', 'X', 'X', '.', '.', '.'], ['.', 'X', 'X', '.', '.', '.', '.'], ['.', '.', '.', '.', '.', 'X', '.'], ['.', 'X', '.', '.', '.', 'X', '.'], 
-#['.', '.', '.', 'X', '.', '.', '.'], ['.', '.', 'X', 'X', '.', '.', '.'], ['.', 'X', 'X', '.', '.', '.', '.'], ['.', 'X', 'X', '.', '.', 'X', '.'], ['.', 'X', '.', '.', '.', 'X', '.'], ['X', 'X', '.', '.', '.', '.', '.'], ['X', '.', '.', '.', '.', '.', '.'], ['X', 'X', '.', '.', '.', 'X', 'X'], ['X', 'X', 'X', 'X', '.', 'X', 'X'], ['X', 'X', 'X', '.', '.', 'X', 'X']]
-
-print(lst)
+print(f'{ans1+1} {ans2+1}')
