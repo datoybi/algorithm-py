@@ -1,9 +1,11 @@
 # 문제를 잘못 읽음 ㅠ
 # 
-# lst = ['TATGATAC','TAAGCTAC','AAAGATCC','TGAGATAC','TAAGATGT']
+lst = ['TATGATAC','TAAGCTAC','AAAGATCC','TGAGATAC','TAAGATGT']
 count = list()
 str = ''
 cnt = 0
+distance = 0
+
 
 for i in range(0, len(lst)): #0~4
     cnt = 0
@@ -12,7 +14,7 @@ for i in range(0, len(lst)): #0~4
         # print(lst[i])
         tmp1 = list(lst[i])
         tmp2 = list(lst[j])
-        print(tmp1, tmp2)
+        # print(tmp1, tmp2)
         for z in range(0,8):
             # print(tmp1[z], tmp2[z])
             if tmp1[z] != tmp2[z]:
