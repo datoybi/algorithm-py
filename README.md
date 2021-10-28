@@ -146,3 +146,10 @@ arranged.append(book)
 🔹 문자열 뒤집기
  <pre><code>s = '61'
 print(s[::-1]) # 16</code></pre>
+
+for key, value in result.items():
+    if value == max(result.values()):
+        print(key)
+
+	람다 배우기 max_val = max(t[1] for t in result_lst)
+
