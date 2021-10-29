@@ -19,7 +19,7 @@ for _ in range(n):
         books[book] = 1
     else:
         books[book] += 1
-    target = max(books.values())
+    target = max(books.)
     array = []
 
     for book, number in books.items():
