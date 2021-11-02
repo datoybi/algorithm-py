@@ -16,6 +16,7 @@ str_lst = [['ABCDXXXXXX'], ['YYYYABCDXX'], ['DCBAZZZZZZ']]
 for i in range(0,11):
     tmp = str_lst[0][0]
     j = i+len(str)
+    print('i : ' , i , ' j : ' , j)
 
     if j <= len(str_lst[0][0]):
         print(tmp[i:j])
@@ -24,9 +25,8 @@ for i in range(0,11):
         s = j-len(str_lst[0][0])
         print('s : ' , s)
         print('hap : ' , tmp[i:j] , ' , ' ,  tmp[0:s])
-        if len(s == len(str)):
+        if s == len(str):
             break
 
-    print(i , j)
-    print(tmp[i:j])
+    # print(tmp[i:j])
     # print(tmp)
