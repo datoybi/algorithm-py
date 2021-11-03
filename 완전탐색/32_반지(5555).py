@@ -19,13 +19,16 @@ for i in range(0,11):
     print('i : ' , i , ' j : ' , j)
 
     if j <= len(str_lst[0][0]):
-        print(tmp[i:j])
+        print(tmp[i:j]) 
 
     elif j > len(str_lst[0][0]):
         s = j-len(str_lst[0][0])
         print('s : ' , s)
         print('hap : ' , tmp[i:j] , ' , ' ,  tmp[0:s])
-        if s == len(str):
+        # if s == len(str):
+        #     break
+
+        if tmp[0:s] == str:
             break
 
     # print(tmp[i:j])
