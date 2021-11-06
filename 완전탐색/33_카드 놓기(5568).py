@@ -43,3 +43,4 @@ for i in range(len(n_lst)):
                       
 print(result_set)
 print(len(result_set))
+# you know what? i dont gir a fuck
