@@ -42,5 +42,5 @@ for i in range(len(n_lst)):
             result_set.add(n_lst[i] + n_lst[j])
                       
 print(result_set)
-print(len(result_set))
+print(len(result_set)) 
 # you know what? i dont gir a fuck can i upppppp loaded?!?!@?#
