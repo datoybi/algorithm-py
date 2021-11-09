@@ -199,3 +199,20 @@ for i in itertools.permutations(lst, 2):
     # 32
 
 </pre></code>
+
+람다함수
+인자 : 표현식
+lst = [
+        [55, 185],
+        [58, 183],
+        [88, 186],
+        [60, 175],
+        [46, 155]
+    ]
+
+func = sorted(lst, key = lambda x : [-x[0], -x[1]])
+
+sorted -> 정렬 
+lst 라는 이중 리스트에
+-x : 내림차순으로 정렬
+x : 오름차순으로 정렬
