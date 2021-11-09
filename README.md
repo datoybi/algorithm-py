@@ -153,3 +153,49 @@ for key, value in result.items():
 
 	람다 배우기 max_val = max(t[1] for t in result_lst)
 
+
+🔹 순열 (permutation)
+몇개를 골라 순서를 고려해 나열한 경우의 수
+예)1,2,3의 숫자가 적힌 카드가 있을 때, 이 중 두 장을 꺼내는 경우의 수 -> 12, 13, 21, 23, 31, 32
+'A', 'B', 'C'로 만들 수 있는 경우의 수 -> 'ABC', 'ACB', 'BAC', 'BCA', 'CAB', 'CBA'
+
+사용법 
+
+<pre><code>import itertools
+arr = ['A', 'B', 'C']
+nPr = itertools.permutations(arr, 3)
+print(list(nPr))
+# [('A', 'B', 'C'), ('A', 'C', 'B'), ('B', 'A', 'C'), ('B', 'C', 'A'), ('C', 'A', 'B'), ('C', 'B', 'A')]
+
+pool = ['A', 'B', 'C']
+print(list(map(''.join, itertools.permutations(pool)))) # 3개의 원소로 수열 만들기
+#['ABC', 'ACB', 'BAC', 'BCA', 'CAB', 'CBA']
+print(list(map(''.join, itertools.permutations(pool, 2)))) # 2개의 원소로 수열 만들기
+#['AB', 'AC', 'BA', 'BC', 'CA', 'CB']</pre></code>
+
+for문 안의 permutation 
+<pre><code>
+import itertools
+
+lst = ['1', '2', '3']
+
+print(list(itertools.permutations(lst, 2)))
+# [('1', '2'), ('1', '3'), ('2', '1'), ('2', '3'), ('3', '1'), ('3', '2')]
+for i in itertools.permutations(lst, 2):
+    print(i)
+    # ('1', '2')
+    # ('1', '3')
+    # ('2', '1')
+    # ('2', '3')
+    # ('3', '1')
+    # ('3', '2')
+
+    print(''.join(i))
+    # 12
+    # 13
+    # 21
+    # 23
+    # 31
+    # 32
+
+</pre></code>

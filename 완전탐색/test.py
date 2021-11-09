@@ -1,13 +1,22 @@
-from itertools import permutations
-import sys
-input = sys.stdin.readline
+import itertools
 
-n,k = int(input()), int(input())
-cards = [input().rstrip() for _ in range(n)]
-res = set()
+lst = ['1', '2', '3']
 
-for per in permutations(cards, k):
-    res.add(''.join(per))
+print(list(itertools.permutations(lst, 2)))
+# [('1', '2'), ('1', '3'), ('2', '1'), ('2', '3'), ('3', '1'), ('3', '2')]
+for i in itertools.permutations(lst, 2):
+    print(i)
+    # ('1', '2')
+    # ('1', '3')
+    # ('2', '1')
+    # ('2', '3')
+    # ('3', '1')
+    # ('3', '2')
 
-print(res)
-print(len(res))
+    print(''.join(i))
+    # 12
+    # 13
+    # 21
+    # 23
+    # 31
+    # 32
