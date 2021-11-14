@@ -216,3 +216,7 @@ sorted -> 정렬
 lst 라는 이중 리스트에
 -x : 내림차순으로 정렬
 x : 오름차순으로 정렬
+
+
+0인 원소의 list 만들기
+zero_lst = [0 for _ in range(130)]
