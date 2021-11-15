@@ -1,29 +1,40 @@
-import copy
+import sys
 
-tc = int(input())
-word = input()
-test_lst = list()
-zero_lst = [0 for i in range(130)] # list를 0으로 세팅
-count = 0 
+T = int(sys.stdin.readline())
 
-for _ in range(tc-1):
-    test_lst.append(input())
+for _ in range(T):
+    #팀의 개수, 문제의 개수, ID, 로그 엔트리 개수
+    n, k, t, m = map(int, sys.stdin.readline().split())
+    #arr[i] = [ID, score1, ..., scorek,최종점수, 제출횟수, 제출시간]
+    arr = [[0]*(k+4) for _ in range(n)] 
+    # [[0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0]]
 
-for i in range(len(word)): # word setting
-    zero_lst[ord(word[i])] += 1
+    #팀 ID
+    for i in range(n):
+        arr[i][0] = i+1
     
-for j in range(len(test_lst)):
-    tmp_lst = copy.deepcopy(zero_lst) # 0으로 세팅한 리스트 copy
-    for z in range(len(test_lst[j])):
-       tmp_lst[ord(test_lst[j][z])] -= 1
+    print(arr)
+    # [[1, 0, 0, 0, 0, 0, 0, 0], [2, 0, 0, 0, 0, 0, 0, 0], [3, 0, 0, 0, 0, 0, 0, 0]]
 
-    value = 0
-    for k in tmp_lst:
-        if k != 0:
-            value += 1
+    for time in range(m):
+        #ID, 문제 번호, 획득 점수
+        i, j, s = map(int, sys.stdin.readline().split())
+        arr[i-1][j] = max(arr[i-1][j], s) #문제별 최고점수
+        arr[i-1][k+2]+=1 #제출횟수
+        arr[i-1][k+3] = time #마지막 제출 시간
 
-    if abs(max(tmp_lst)) <= 1 and abs(min(tmp_lst)) <= 1 and abs(max(tmp_lst)) + abs(min(tmp_lst)) <= 2 and value <=2 and abs(len(word) - len(test_lst[j])) <= 1: 
-        count += 1
+    print(arr)
+    # [[1, 30, 40, 0, 0, 0, 3, 3], [2, 0, 0, 30, 0, 0, 1, 1], [3, 70, 0, 0, 0, 0, 1, 4]]
+
+    for i in range(n):
+        for j in range(1,k+1):
+            arr[i][k+1] += arr[i][j] #최종점수 계산
     
-print(count)
-
+    #정렬
+    ans = sorted(arr, key = lambda x: (-x[k+1], x[k+2], x[k+3]))
+    
+    #내 팀 찾기
+    for i in range(n):
+        if (ans[i][0]==t):
+            print(i+1)
+            break

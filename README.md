@@ -220,3 +220,28 @@ x : 오름차순으로 정렬
 
 0인 원소의 list 만들기
 zero_lst = [0 for _ in range(130)]
+
+sys.stdin.readline()
+
+impoty sys
+
+한개입력
+a = int(sys.stdin.readline())
+: 3을 입력하면 3\n이렇게 입력이 되기 때문에 형변환을 거쳐야 함
+
+여러개 입력 
+a,b,c = map(int, sys.stdin.readline().split())
+
+리스트에 저장 
+data = list(map(int, sys.stdin.readline().split()))
+
+2차원 리스트에 저장
+data = []
+n = int(sys.stdin.readline())
+for i in range(n):
+    data.append(list(map(int,sys.stdin.readline().split())))
+
+문자열 n줄을 입력받아 리스트에 저장 
+n = int(sys.stdin.readline())
+data = [sys.stdin.readline().strip() for i in range(n)]
+
