@@ -245,3 +245,6 @@ for i in range(n):
 n = int(sys.stdin.readline())
 data = [sys.stdin.readline().strip() for i in range(n)]
 
+개행 없애기 
+strip() 붙이기
+word_lst.append(sys.stdin.readline().strip())

@@ -1,40 +1,35 @@
 import sys
 
-T = int(sys.stdin.readline())
+# 입력 받을 개수
+n = int(sys.stdin.readline())
 
-for _ in range(T):
-    #팀의 개수, 문제의 개수, ID, 로그 엔트리 개수
-    n, k, t, m = map(int, sys.stdin.readline().split())
-    #arr[i] = [ID, score1, ..., scorek,최종점수, 제출횟수, 제출시간]
-    arr = [[0]*(k+4) for _ in range(n)] 
-    # [[0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0]]
+# 값 입력받기
+data = []
+for _ in range(n):
+    data.append(int(sys.stdin.readline()))
 
-    #팀 ID
-    for i in range(n):
-        arr[i][0] = i+1
-    
-    print(arr)
-    # [[1, 0, 0, 0, 0, 0, 0, 0], [2, 0, 0, 0, 0, 0, 0, 0], [3, 0, 0, 0, 0, 0, 0, 0]]
+# 결과 변수 및 이미 한 번 체크하였었던 수인지를 확인하기 위한 리스트 선언
+result = 0
+already = [0] * 1000001 # 0으로 다 채운 list
 
-    for time in range(m):
-        #ID, 문제 번호, 획득 점수
-        i, j, s = map(int, sys.stdin.readline().split())
-        arr[i-1][j] = max(arr[i-1][j], s) #문제별 최고점수
-        arr[i-1][k+2]+=1 #제출횟수
-        arr[i-1][k+3] = time #마지막 제출 시간
+# print(already)
 
-    print(arr)
-    # [[1, 30, 40, 0, 0, 0, 3, 3], [2, 0, 0, 30, 0, 0, 1, 1], [3, 70, 0, 0, 0, 0, 1, 4]]
+# 확인 진행
+for i in data:
+    # print(already[i]) # 0 이나 1
+    if already[i]: 
+        continue
+    already[i] = 1 # 반복하지 않기위해 사용
+    cur = data[0] # 2
+    cnt = 1
+    for j in range(1 ,len(data)):
+        if i == data[j]: # i(삭제할 숫자)랑 data[j] 같으면 continue
+            continue
+        if cur == data[j]: # cur이랑 같으면 +1
+            cnt += 1
+        else: # 다르면 cnt = 1
+            cur = data[j]
+            cnt = 1
+        result = max(result, cnt)
 
-    for i in range(n):
-        for j in range(1,k+1):
-            arr[i][k+1] += arr[i][j] #최종점수 계산
-    
-    #정렬
-    ans = sorted(arr, key = lambda x: (-x[k+1], x[k+2], x[k+3]))
-    
-    #내 팀 찾기
-    for i in range(n):
-        if (ans[i][0]==t):
-            print(i+1)
-            break
+print(result)
