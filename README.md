@@ -25,6 +25,7 @@
     sorted(list) </code></pre>
 
 🔹 역정렬 
+    reversed는 순서를 뒤집어 주는거기 때문에 sort하고 reverse 쳐야함
     <pre><code> r_answer = list(reversed(answer)) #list()에 감싸야한다</code></pre>
 
 🔹 lambda 인자 : 표현식 
