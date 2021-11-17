@@ -1,35 +1,29 @@
-import sys
+n = int(input())
+t = []
+p = []
+dp = []
 
-# 입력 받을 개수
-n = int(sys.stdin.readline())
 
-# 값 입력받기
-data = []
-for _ in range(n):
-    data.append(int(sys.stdin.readline()))
+for i in range(n):
+    a, b = map(int, input().split())
+    t.append(a)
+    p.append(b)
+    dp.append(b)
+dp.append(0) # 마지막에 0 append는 왜?!?!?!?!??
 
-# 결과 변수 및 이미 한 번 체크하였었던 수인지를 확인하기 위한 리스트 선언
-result = 0
-already = [0] * 1000001 # 0으로 다 채운 list
+# print(t) # [5, 4, 3, 2, 1, 1, 2, 3, 4, 5]
+# print(p) # [50, 40, 30, 20, 10, 10, 20, 30, 40, 50]
+# print(dp) # [50, 40, 30, 20, 10, 10, 20, 30, 40, 50, 0]
 
-# print(already)
+for i in range(n - 1, -1, -1): # 9 ~ 0 더 크면 0이된다. 시간이 크면 부적합하니까
+    if t[i] + i > n:
+        dp[i] = dp[i + 1]
+    else:
+        # print(i , dp[i], dp[i + 1],  p[i] ,t[i],  dp[i + t[i]] )
+        dp[i] = max(dp[i + 1], p[i] + dp[i + t[i]]) # 왜 이렇게 하는 건지 노이해다..
+    
+    # print('dp :', dp)
+print(dp[0])
 
-# 확인 진행
-for i in data:
-    # print(already[i]) # 0 이나 1
-    if already[i]: 
-        continue
-    already[i] = 1 # 반복하지 않기위해 사용
-    cur = data[0] # 2
-    cnt = 1
-    for j in range(1 ,len(data)):
-        if i == data[j]: # i(삭제할 숫자)랑 data[j] 같으면 continue
-            continue
-        if cur == data[j]: # cur이랑 같으면 +1
-            cnt += 1
-        else: # 다르면 cnt = 1
-            cur = data[j]
-            cnt = 1
-        result = max(result, cnt)
 
-print(result)
+# 왜 거꾸로 할까?
