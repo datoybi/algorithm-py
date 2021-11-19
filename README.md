@@ -234,7 +234,13 @@ a = int(sys.stdin.readline())
 a,b,c = map(int, sys.stdin.readline().split())
 
 리스트에 저장 
+int
 data = list(map(int, sys.stdin.readline().split()))
+
+문자열 
+value = list(map(str, sys.stdin.readline().split()))
+value = sys.stdin.readline().split()
+
 
 2차원 리스트에 저장
 data = []
