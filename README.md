@@ -91,9 +91,8 @@
 	print(list(str))</code></pre>
 
 🔹	변수 출력시 공백 제거하고싶을 떄 
-	<pre><code>print("Cube = ",a,", Triple = (",b,",",c,",",d,")", sep="")
 	print(f"Cube = {a}, Triple = ({b},{c},{d})")</code></pre>
-
+    print(f'Hamming distance is {distance}.')
 
 🔹 람다식
 	<pre><code>  def hap(x, y):
@@ -232,6 +231,7 @@ a = int(sys.stdin.readline())
 
 여러개 입력 
 a,b,c = map(int, sys.stdin.readline().split())
+str1, str2 = map(str, sys.stdin.readline().split())
 
 리스트에 저장 
 int
@@ -255,3 +255,19 @@ data = [sys.stdin.readline().strip() for i in range(n)]
 개행 없애기 
 strip() 붙이기
 word_lst.append(sys.stdin.readline().strip())
+
+리스트 개행 없애기 
+S = list(sys.stdin.readline().strip().split(','))
+
+리스트를 문자열로 붙이기
+print(''.join(lst))
+
+try - except 공부
+
+리스트 max값이 여러개인지 판별 
+print(lst.count(4)) 
+# 값이 4인 list의 원소를 카운트
+
+띄어쓰기 없는 원소일 경우 이차원배열
+for i in range(N):
+    room.append(list(map(str, sys.stdin.readline())))

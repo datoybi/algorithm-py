@@ -1,3 +1,4 @@
+# 맞았습니다!
 import sys
 
 A, B, C = int(sys.stdin.readline()), int(sys.stdin.readline()), int(sys.stdin.readline())
