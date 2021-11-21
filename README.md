@@ -271,3 +271,6 @@ print(lst.count(4))
 띄어쓰기 없는 원소일 경우 이차원배열
 for i in range(N):
     room.append(list(map(str, sys.stdin.readline())))
+
+이중.. 아 이거 뭐라햇떠랑.. 기어강ㄴ남 지금은
+    print(f'{A} & {B} are anagrams.' if flag == True else f'{A} & {B} are NOT anagrams.')
