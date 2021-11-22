@@ -27,6 +27,9 @@
 🔹 역정렬 
     reversed는 순서를 뒤집어 주는거기 때문에 sort하고 reverse 쳐야함
     <pre><code> r_answer = list(reversed(answer)) #list()에 감싸야한다</code></pre>
+    
+    num.sort(reverse=True)
+
 
 🔹 lambda 인자 : 표현식 
     <pre><code>  (lambda x,y : x+y)(10, 20) # 30 
@@ -274,3 +277,11 @@ for i in range(N):
 
 이중.. 아 이거 뭐라햇떠랑.. 기어강ㄴ남 지금은
     print(f'{A} & {B} are anagrams.' if flag == True else f'{A} & {B} are NOT anagrams.')
+
+
+list 중복 제거 방법 : set으로 바꿨다가 list로 형변환 하기 
+
+set_lst = set()
+for _ in range(int(sys.stdin.readline())):
+    set_lst.add(sys.stdin.readline().rstrip())
+lst = list(set_lst)
