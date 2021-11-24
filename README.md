@@ -129,6 +129,11 @@ a # {1: 'a', 2: 'b'}</code></pre>
 grade['pey'] # 10
 grade['julliet'] # 99</code></pre>
 
+딕셔너리 키로 정렬
+dictionary = sorted(dictionary.items(), reverse=True)
+
+
+
 * 반복문 사용
 
 <pre><code>for book, number in books.items(): # key, value 반복문

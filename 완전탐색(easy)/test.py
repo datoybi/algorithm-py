@@ -1,12 +1,19 @@
 '''
-int& a*[]&, b, c*;
+4
+Baha enter
+Askar enter
+Baha leave
+Artem enter
+
+4
+a enter
+b enter
+a leave
+c enter
 
 
-int&&[]* a;
-int& b;
-int&* c;
+
 '''
-lst = ['a*[]&']
+i = 'ABCDXXXXXX'
 
-print(lst[0][4:5])
-print(lst[0][len(lst[0])-1:len(lst[0])])
+print(i[0:3])
