@@ -1,19 +1,43 @@
 '''
-4
-Baha enter
-Askar enter
-Baha leave
-Artem enter
-
-4
-a enter
-b enter
-a leave
-c enter
-
+26 5
+Bulbasaur
+Ivysaur
+Venusaur
+Charmander
+Charmeleon
+Charizard
+Squirtle
+Wartortle
+Blastoise
+Caterpie
+Metapod
+Butterfree
+Weedle
+Kakuna
+Beedrill
+Pidgey
+Pidgeotto
+Pidgeot
+Rattata
+Raticate
+Spearow
+Fearow
+Ekans
+Arbok
+Pikachu
+Raichu
+25
+Raichu
+3
+Pidgey
+Kakuna
 
 
 '''
-i = 'ABCDXXXXXX'
 
-print(i[0:3])
+dic = dict()
+
+dic[1] = 'A'
+dic[2] = 'B'
+
+print(dic)

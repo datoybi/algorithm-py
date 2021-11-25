@@ -187,7 +187,7 @@ import itertools
 
 lst = ['1', '2', '3']
 
-print(list(itertools.permutations(lst, 2)))
+print(list(itertools.permutations(lst, len(lst))))
 # [('1', '2'), ('1', '3'), ('2', '1'), ('2', '3'), ('3', '1'), ('3', '2')]
 for i in itertools.permutations(lst, 2):
     print(i)
@@ -290,3 +290,17 @@ set_lst = set()
 for _ in range(int(sys.stdin.readline())):
     set_lst.add(sys.stdin.readline().rstrip())
 lst = list(set_lst)
+
+
+리스트 맨 앞, 맨 뒤에 원소 삽입하기
+result.insert(0, chr(i)) # 맨앞에 원소 삽입
+result.append(chr(i)) # 맨뒤에 원소 삽입
+
+
+문자인지 숫자인지 판별하는 메소드
+
+    if value.isdigit(): # 숫자면
+        print("숫자")
+        
+    else:
+        print('문자')
