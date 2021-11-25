@@ -102,6 +102,10 @@
 	return x+y
 	print(hap(10,20))</code></pre>
 
+
+    람다 글자수가 적은것부터 정렬
+
+
 🔹 lambda 매개변수 : 실행문<br>
 	<pre><code>  print((lambda x,y: x+y)(10, 20))
 	func = (lambda x: x+1)
@@ -225,6 +229,11 @@ lst 라는 이중 리스트에
 -x : 내림차순으로 정렬
 x : 오름차순으로 정렬
 
+리스트 값의 len이 작은것부터 정렬
+lst.sort(key=len)
+
+
+
 
 0인 원소의 list 만들기
 zero_lst = [0 for _ in range(130)]
@@ -304,3 +313,8 @@ result.append(chr(i)) # 맨뒤에 원소 삽입
         
     else:
         print('문자')
+
+
+시간초과가 난다면
+list대신 dictionary로 사용 할 수 있다면 그걸로 사용하기
+list in 순회하는 거 반복문이니 사용하지말고 다른방법 생각해보기
