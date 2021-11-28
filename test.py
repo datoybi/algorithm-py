@@ -1,12 +1,9 @@
-c = [[0] * 15 for i in range(5)]
-for i in range(5):
-    d = list(input())
-    d_len = len(d)
-    for j in range(d_len):
-        c[i][j] = d[j]
-for i in range(15):
-    for j in range(5):
-        if c[j][i] == 0:
-            continue;
-        else:
-            print(c[j][i], end='')
+# n! / k!(n-k)!
+
+import sys
+from math import factorial
+
+n1, n2 = map(int, sys.stdin.readline().split())
+b = factorial(n1) // (factorial(n2) * factorial(n1-n2))
+print(b)
+
