@@ -1,4 +1,5 @@
 '''
+맞았습니다!
     운동    맥박 T만큼 증가  X+T 가 M보다 작거나 같을 때만 운동가능
     휴식    맥박 R만큼 감소     1분뒤 맥박이 X-R 절대로 M보다 낮아지면 안됌
 
@@ -19,7 +20,8 @@ N, m, M, T, R = list(map(int, sys.stdin.readline().split()))
 time = 0
 count = 0
 now = m
-if T > M-m or R > M-m:
+
+if T > M-m:
     print('-1')
     
 else:
@@ -37,9 +39,4 @@ else:
             
 
     print(time)
-
-        
-
-
-
 
