@@ -1,12 +1,12 @@
-N = int(input())
-S = input()
-dic = {
-    'A': {'A': 'A', 'G': 'C', 'C': 'A', 'T': 'G'},
-    'G': {'A': 'C', 'G': 'G', 'C': 'T', 'T': 'A'},
-    'C': {'A': 'A', 'G': 'T', 'C': 'C', 'T': 'G'},
-    'T': {'A': 'G', 'G': 'A', 'C': 'G', 'T': 'T'}
-}
-for _ in range(N - 1):
-    new = dic[S[-1]][S[-2]]
-    S = S[:-2] + new
-print(S)
+
+lst = [i for i in range(1, 21)]
+
+# lst.reverse()
+
+print(lst)
+print(lst[4:10])
+
+'''
+1
+ABCFXZ
+'''

@@ -327,3 +327,27 @@ dic = {
 }
 
 print(dic['A']['G']) # C
+
+
+입력 받을 때 간결한 표현 
+
+N, M = list(map(int, sys.stdin.readline().split()))
+dice, board = list(), list()
+board.append(0)
+dice.append(0)
+
+for i in range(N):
+    board.append(int(sys.stdin.readline()))
+
+for i in range(M):
+    dice.append(int(sys.stdin.readline()))
+
+얘보단 
+
+N, M = list(map(int, sys.stdin.readline().split()))
+board = [0] + [int(input()) for _ in range(N)]
+dice = [0] + [int(input()) for _ in range(M)]
+
+
+배열 한줄로 적기
+lst = [i for i in range(1, 21)]
