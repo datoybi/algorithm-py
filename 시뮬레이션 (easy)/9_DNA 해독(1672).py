@@ -4,6 +4,8 @@
 len(A)-1,len(A)-2를 말한거였다.
 
 '''
+# 이것도 메모리 초과.. 낼 해봐야지 
+
 import sys
 
 decoder = {
