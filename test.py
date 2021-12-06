@@ -13,3 +13,7 @@ print(ord('I')) # 73
 print(ord('H'))
 
 print(chr(ord('H')))
+
+n, m = list(map(int, input().split()))
+
+print(n*m)
