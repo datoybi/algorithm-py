@@ -351,3 +351,9 @@ dice = [0] + [int(input()) for _ in range(M)]
 
 배열 한줄로 적기
 lst = [i for i in range(1, 21)]
+
+프린트 하는데 리스트 원소를 한칸씩 띄우고
+그 다음에 개행 하고싶을때 
+for j in lst:
+            print(j, end=' ')
+        print()
