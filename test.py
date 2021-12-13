@@ -13,7 +13,8 @@
 #     for i in lst[0:j:]:
 #         print(i, end='')
 
-print("\    /\\")
-print(" )  ( ')")
-print("(  /  )")
-print(" \(__)|")
+# print("\    /\\")
+# print(" )  ( ')")
+# print("(  /  )")
+# print(" \(__)|")
+# 오늘은 바쁜 날...
