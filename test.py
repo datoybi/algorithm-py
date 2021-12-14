@@ -1,20 +1,43 @@
+# n, k = map(int, input().split())
+# data = ['?'] * n
+# idx = 0
+# check = True
 
-# lst = ['?', 'O', 'H', 'R', 'V', 'A', 'T', 'I', 'N'] 
-# last_word, last_idx = '', 1
-# del lst[0]
-# print(lst)
+# print(data)
+# for i in range(k):
+#     num, alphabet = input().split()
+#     idx = (idx + int(num)) % n
+#     if data[idx] != '?':
+#         if data[idx] == alphabet:
+#             continue
+#         check = False
+#     else:
+#         data[idx] = alphabet
 
-# lst.reverse()
-# print(lst)
+# print(data, check)
 
-# for j in range(len(lst)):
-#     for i in lst[j:]:
-#         print(i, end='')
-#     for i in lst[0:j:]:
-#         print(i, end='')
+# for i in range(n):
+#     if data[i] == '?':
+#         continue
+#     for j in range(i + 1, n):
+#         if data[i] == data[j]:
+#             check = False
+#             break
 
-# print("\    /\\")
-# print(" )  ( ')")
-# print("(  /  )")
-# print(" \(__)|")
-# 오늘은 바쁜 날...
+# print(data)
+
+# if check:
+#     for _ in range(n):
+#         print(data[idx], end='')
+#         idx = (idx - 1) % n
+# else:
+#     print('!')
+
+
+a,b = list(map(int, input().split()))
+
+print(a+b)
+print(a-b)
+print(a*b)
+print(a//b)
+print(a%b)
