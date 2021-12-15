@@ -1,4 +1,8 @@
 '''
+맞았습니다!
+바퀴를 두바퀴 이상 돌리는 경우의 수를 놓쳤음!!! 결국 해냈다..
+
+
     바퀴를 K번 돌림 
     어떤 글자에서 멈추었는지 종이에 적는다 
     종이를 바탕으로 바쿠에 적은 알파벳 알아내기 
@@ -10,7 +14,6 @@
 
 '''
 
-# 왜 런타임 indexof 에러?! 아놔
 import sys
 
 N, K = list(map(int, sys.stdin.readline().split()))
@@ -20,24 +23,30 @@ last_word, last_idx = '', 0
 
 for j in range(K):
     S, word = sys.stdin.readline().split()
-    now = (now + int(S)) % N # 이거 보고 베낌 더하고 나누면 나머지가 값되는거
-    if lst[now] != '?': 
-        if lst[now] == word:
-            continue
-        flag = False
-    else:
+    now = (now + int(S)) % N
+    if lst[now] == '?': 
         lst[now] = word
-
-print(lst, flag, now)
+    else:
+        if lst[now] != word:
+            flag = False
+    if j == K-1:
+        last_word = word
+# print(now, word, lst, flag)
 # 출력
-if flag:
-    for _ in range(N):
-        print(lst[now], end='')
-        now = (now-1) % N
-else:
+if flag == False:
     print("!")
-
-    
+else:
+    lst.reverse()
+    for i in range(N):
+        if lst[i] == last_word:
+            last_idx = i
+        if lst[i] != '?' and lst.count(lst[i]) != 1:
+            print('!')
+            exit(0)
+    for i in lst[last_idx:]:
+        print(i, end='')
+    for i in lst[0:last_idx:]:
+        print(i, end='')
 
 
 

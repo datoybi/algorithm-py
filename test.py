@@ -1,43 +1,18 @@
-# n, k = map(int, input().split())
-# data = ['?'] * n
-# idx = 0
-# check = True
+'''
+5
+1 3 4 5 2
+1234567 2222222 3333333 4444444 5555555
+1234567 3333333 4444444 5555555 2222222
+1234567 4444444 5555555 2222222 3333333
+1234567 5555555 2222222 3333333 4444444
 
-# print(data)
-# for i in range(k):
-#     num, alphabet = input().split()
-#     idx = (idx + int(num)) % n
-#     if data[idx] != '?':
-#         if data[idx] == alphabet:
-#             continue
-#         check = False
-#     else:
-#         data[idx] = alphabet
+1234567 5555555 2222222 3333333 4444444 
 
-# print(data, check)
-
-# for i in range(n):
-#     if data[i] == '?':
-#         continue
-#     for j in range(i + 1, n):
-#         if data[i] == data[j]:
-#             check = False
-#             break
-
-# print(data)
-
-# if check:
-#     for _ in range(n):
-#         print(data[idx], end='')
-#         idx = (idx - 1) % n
-# else:
-#     print('!')
+1234567 2222222 3333333 4444444 5555555
+1234567 3333333 4444444 5555555 2222222
+1234567 4444444 5555555 2222222 3333333
+1234567 5555555 2222222 3333333 4444444
+1234567 2222222 3333333 4444444 5555555
 
 
-a,b = list(map(int, input().split()))
-
-print(a+b)
-print(a-b)
-print(a*b)
-print(a//b)
-print(a%b)
+'''
