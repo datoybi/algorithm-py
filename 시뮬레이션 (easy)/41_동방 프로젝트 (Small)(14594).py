@@ -8,11 +8,6 @@
 import sys
 
 lst = [[i] for i in range(0, int(sys.stdin.readline())+1)]
-# lst = list()
-
-# for i in range(int(sys.stdin.readline())+1):
-#     lst.append([i])   
-print(lst)
 
 for _ in range(int(sys.stdin.readline())):
     x, y = list(map(int, sys.stdin.readline().split()))
@@ -25,65 +20,38 @@ for _ in range(int(sys.stdin.readline())):
 
     for j in range(x+1, y+1):
         idx = 0
-        for i in range(len(lst)):
-            if j in lst[i]:
-                print(' 지우기 : lst[i] : ' , lst[i])
+        for i in range(len(lst)): # 합치기
+            if j in lst[i]: 
                 idx = i
-                del lst[i]
+                lst[x_idx].append(j)
+                for z in range(len(lst[i])): # 지우기
+                    if lst[i][z] == j:
+                        if len(lst[i]) == 1:
+                            del lst[i]
+                            break
+                        del lst[i][z]
+                        break
                 break
-        print('지워진 : ' , lst)
-        print('넣기 : lst[i] : ' , lst[i])
-        lst[x_idx].append(j)
 
-    print(lst)
-    print(len(lst))
-
-
-    # print('x_idx : ' , x_idx)
-    # for i in range(x+1, y+1):
-    #     for j in range(len(lst)):
-    #         print('j : ' , lst[j][0])
-    #         if x in lst[j]:
-    #             del lst[j]
-    #             print('del : ' , lst)
-    #     lst[x_idx].append(i)
-        
     # print(lst)
+# print(len(lst))
+print(len(lst)-1)
 
+'''
+100
+6
+1 9
+1 8
+3 10
+59 60
+4 70
+65 95
 
-#     # for i in range(): # 0
-#     #     lst[i].append(lst[y-1][0])
-#     #     del lst[y-1]
-#     #     print(lst)
+31
 
+10
+2
+6 8
+1 8
+'''
 
-
-
-
-
-
-
-
-# # lst = [i for i in range(1, int(sys.stdin.readline())+1)]
-# lst = list()
-
-# for i in range(int(sys.stdin.readline())+1):
-#     lst.append([i])   
-# print(lst)
-
-# for _ in range(int(sys.stdin.readline())):
-#     x, y = list(map(int, sys.stdin.readline().split()))
-#     x_idx = 0
-
-#     for i in range(len(lst)): # 1
-#         if lst[i][0] == x:
-#             x_idx = i
-#             break
-    
-#     for i in range(len(lst)):
-
-
-#     # for i in range(): # 0
-#     #     lst[i].append(lst[y-1][0])
-#     #     del lst[y-1]
-#     #     print(lst)
