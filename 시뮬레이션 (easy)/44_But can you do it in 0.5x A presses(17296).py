@@ -15,23 +15,41 @@ press = False
 count = 0
 
 for i in lst:
-    # print('현재 : ' , i, ' , ' , 'count : ' , count , ' , ' , press)
-    while i > 0:
-        # print('전 현재 : ' , i, ' , ' , 'count : ' , count , ' , ' , press)
-        if press == False: # 버튼이 눌려져 있지 않으면
-            count += 1
-            i -= 1
-        elif press == True: # 버튼이 눌려져 있으면
-            i -= 0.5
-            while i > 0:
-                i -= 1
-                count += 1
-        #         print('후 현재 : ' , i, ' , ' , 'count : ' , count , ' , ' , press)
-        # print('후 현재 : ' , i, ' , ' , 'count : ' , count , ' , ' , press)
+    if round(i) != i and not press: # 버튼이 눌려져 있지 않고 소수점이 .5면
+        count += 1
+    count += int(i)
+    if i > 0: # ??
+        press = True
 
-    press = True
 
 print(count)
+
+
+# import sys
+
+# N = int(sys.stdin.readline())
+# lst = list(map(float, sys.stdin.readline().split()))
+# press = False
+# count = 0
+
+# for i in lst:
+#     # print('현재 : ' , i, ' , ' , 'count : ' , count , ' , ' , press)
+#     while i > 0:
+#         # print('전 현재 : ' , i, ' , ' , 'count : ' , count , ' , ' , press)
+#         if press == False: # 버튼이 눌려져 있지 않으면
+#             count += 1
+#             i -= 1
+#         elif press == True: # 버튼이 눌려져 있으면
+#             i -= 0.5
+#             while i > 0:
+#                 i -= 1
+#                 count += 1
+#         #         print('후 현재 : ' , i, ' , ' , 'count : ' , count , ' , ' , press)
+#         # print('후 현재 : ' , i, ' , ' , 'count : ' , count , ' , ' , press)
+
+#     press = True
+
+# print(count)
 
 
 
