@@ -357,3 +357,7 @@ lst = [i for i in range(1, 21)]
 for j in lst:
             print(j, end=' ')
         print()
+
+
+딕셔너리 두번째 키값 가져오기
+print(list(direction.keys())[1]) # 두번째 키값 가져오기
