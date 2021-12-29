@@ -364,3 +364,10 @@ print(list(direction.keys())[1]) # 두번째 키값 가져오기
 
 max value index 값 가져오기
 print(count_lst.index(max(count_lst)))
+
+EOI
+while True:
+    try:
+
+    except:
+        break

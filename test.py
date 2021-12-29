@@ -1,13 +1,5 @@
-'''
-
-5
-R 2 0
-R 3 1
-W 5 
-S 2 6 
-S 3 7
-
-'''
-
-word = 'ABAB'
-print(word[0:2])
+T = int(input())
+if T % 10:
+    print(-1)
+else:
+    print(T // 300, T % 300 // 60, T % 300 % 60 // 10)
