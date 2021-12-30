@@ -115,7 +115,7 @@
 
 🔹 Python3는 pypy3보다 느리다, pypy3는 Python3보다 빠르지만 메모리를 많이 먹는다.
 
-🔹 dictionary
+## 🔹 Dictionary 딕셔너리
 * 기본 모습 
 	* key : value 쌍으로 이루어져 있음
 <pre><code> dic = {'name':'pey', 'phone':'0119993323', 'birth': '1118'}</code></pre>
@@ -130,45 +130,41 @@ a # {1: 'a', 2: 'b'}</code></pre>
 grade['pey'] # 10
 grade['julliet'] # 99</code></pre>
 
-딕셔너리 키로 정렬
+* max Value의 키 얻기
+<pre><code>
+for key, value in result.items():
+    if value == max(result.values()):
+        print(key)</code></pre>
+
+* 딕셔너리 키로 정렬
+<pre><code>
 dictionary = sorted(dictionary.items(), reverse=True)
-
-
+</code></pre>
 
 * 반복문 사용
-
-<pre><code>for book, number in books.items(): # key, value 반복문
-if number == target: 
-arranged.append(book)
-# target = max(books.values())
-
+<pre><code>
+for key, value in books.items(): # key, value 반복문
+    if value == target: 
+    arranged.append(key)
+    # target = max(key.values())
 </code></pre>
 
 * 주의사항 
 	* key는 고유값이므로 중복되는 key값을 설정해 놓으면 나머지 것들이 모두 무시된다는점을 주의해야한다.
 
-
 🔹 승 구하기
  <pre><code>print(2**3) #2*2*2=8</code></pre>
-
 
 🔹 문자열 뒤집기
  <pre><code>s = '61'
 print(s[::-1]) # 16</code></pre>
-
-for key, value in result.items():
-    if value == max(result.values()):
-        print(key)
-
-	람다 배우기 max_val = max(t[1] for t in result_lst)
-
 
 🔹 순열 (permutation)
 몇개를 골라 순서를 고려해 나열한 경우의 수
 예)1,2,3의 숫자가 적힌 카드가 있을 때, 이 중 두 장을 꺼내는 경우의 수 -> 12, 13, 21, 23, 31, 32
 'A', 'B', 'C'로 만들 수 있는 경우의 수 -> 'ABC', 'ACB', 'BAC', 'BCA', 'CAB', 'CBA'
 
-사용법 
+* 사용법 
 
 <pre><code>import itertools
 arr = ['A', 'B', 'C']
@@ -178,16 +174,14 @@ print(list(nPr))
 
 pool = ['A', 'B', 'C']
 print(list(map(''.join, itertools.permutations(pool)))) # 3개의 원소로 수열 만들기
-#['ABC', 'ACB', 'BAC', 'BCA', 'CAB', 'CBA']
+# ['ABC', 'ACB', 'BAC', 'BCA', 'CAB', 'CBA']
 print(list(map(''.join, itertools.permutations(pool, 2)))) # 2개의 원소로 수열 만들기
-#['AB', 'AC', 'BA', 'BC', 'CA', 'CB']</pre></code>
+# ['AB', 'AC', 'BA', 'BC', 'CA', 'CB']</pre></code>
 
 for문 안의 permutation 
 <pre><code>
 import itertools
-
 lst = ['1', '2', '3']
-
 print(list(itertools.permutations(lst, len(lst))))
 # [('1', '2'), ('1', '3'), ('2', '1'), ('2', '3'), ('3', '1'), ('3', '2')]
 for i in itertools.permutations(lst, 2):
@@ -207,10 +201,11 @@ for i in itertools.permutations(lst, 2):
     # 31
     # 32
 
-</pre></code>
+</code></pre>
 
-람다함수
-인자 : 표현식
+## 🔹람다함수
+* 인자 : 표현식
+<pre><code>
 lst = [
         [55, 185],
         [58, 183],
@@ -220,105 +215,99 @@ lst = [
     ]
 
 func = sorted(lst, key = lambda x : [-x[0], -x[1]])
+</code></pre></code>
 
-sorted -> 정렬 
-lst 라는 이중 리스트에
--x : 내림차순으로 정렬
-x : 오름차순으로 정렬
+* sorted -> 정렬
+    * x : 내림차순으로 정렬
+    * x : 오름차순으로 정렬
+<br/>
 
-리스트 값의 len이 작은것부터 정렬
+* 리스트 값의 len이 작은것부터 정렬
+<pre><code>
 lst.sort(key=len)
-
 lst.sort(key = lambda x : [x[-2],  x[-1]]) #-2번째오름차순 후 -1번째 오름차순
+</code></pre>
 
-
-
-0인 원소의 list 만들기
+* 0인 원소의 list 만들기
+<pre><code>
 zero_lst = [0 for _ in range(130)]
-
 sys.stdin.readline()
+</code></pre>
 
-impoty sys
+## 🔹impoty sys
 
-한개입력
-a = int(sys.stdin.readline())
+* 한개입력
+<pre><code>a = int(sys.stdin.readline()) </code></pre>
 : 3을 입력하면 3\n이렇게 입력이 되기 때문에 형변환을 거쳐야 함
 
-여러개 입력 
-a,b,c = map(int, sys.stdin.readline().split())
-str1, str2 = map(str, sys.stdin.readline().split())
+* 여러개 입력 
+<pre><code>a,b,c = map(int, sys.stdin.readline().split())
+str1, str2 = map(str, sys.stdin.readline().split())</code></pre>
 
-리스트에 저장 
-int
-data = list(map(int, sys.stdin.readline().split()))
+* 리스트에 저장 
+<pre><code>int data = list(map(int, sys.stdin.readline().split()))</code></pre>
 
-문자열 
-value = list(map(str, sys.stdin.readline().split()))
-value = sys.stdin.readline().split()
+* 문자열 
+<pre><code>value = list(map(str, sys.stdin.readline().split()))
+value = sys.stdin.readline().split()</code></pre>
 
-
-2차원 리스트에 저장
-data = []
+* 2차원 리스트에 저장
+<pre><code>data = []
 n = int(sys.stdin.readline())
 for i in range(n):
-    data.append(list(map(int,sys.stdin.readline().split())))
+    data.append(list(map(int,sys.stdin.readline().split())))</code></pre>
 
-문자열 n줄을 입력받아 리스트에 저장 
-n = int(sys.stdin.readline())
-data = [sys.stdin.readline().strip() for i in range(n)]
+* 문자열 n줄을 입력받아 리스트에 저장 
+<pre><code>n = int(sys.stdin.readline())
+data = [sys.stdin.readline().strip() for i in range(n)]</code></pre>
 
-개행 없애기 
-strip() 붙이기
-word_lst.append(sys.stdin.readline().strip())
+* 개행 없애기 
+    * strip() 붙이기
+<pre><code>word_lst.append(sys.stdin.readline().strip())</code></pre>
 
-리스트 개행 없애기 
-S = list(sys.stdin.readline().strip().split(','))
+* 리스트 개행 없애기 
+<pre><code> S = list(sys.stdin.readline().strip().split(','))</code></pre>
 
-리스트를 문자열로 붙이기
-print(''.join(lst))
+* 리스트를 문자열로 붙이기
+<pre><code>print(''.join(lst))</code></pre>
 
-try - except 공부
+* 리스트 max값이 여러개인지 판별 
+<pre><code>print(lst.count(4)) # 값이 4인 list의 원소를 카운트</code></pre>
 
-리스트 max값이 여러개인지 판별 
-print(lst.count(4)) 
-# 값이 4인 list의 원소를 카운트
+* 띄어쓰기 없는 원소일 경우 이차원배열
+<pre><code>for i in range(N):
+    room.append(list(map(str, sys.stdin.readline())))</code></pre>
 
-띄어쓰기 없는 원소일 경우 이차원배열
-for i in range(N):
-    room.append(list(map(str, sys.stdin.readline())))
-
-이중.. 아 이거 뭐라햇떠랑.. 기어강ㄴ남 지금은
-    print(f'{A} & {B} are anagrams.' if flag == True else f'{A} & {B} are NOT anagrams.')
+### 🔹 삼항연산자 
+<pre><code>print(f'{A} & {B} are anagrams.' if flag == True else f'{A} & {B} are NOT anagrams.')</code></pre>
 
 
-list 중복 제거 방법 : set으로 바꿨다가 list로 형변환 하기 
-
-set_lst = set()
+* list 중복 제거 방법 : set으로 바꿨다가 list로 형변환 하기 
+<pre><code>set_lst = set()
 for _ in range(int(sys.stdin.readline())):
     set_lst.add(sys.stdin.readline().rstrip())
 lst = list(set_lst)
+</code></pre>
 
+* 리스트 맨 앞, 맨 뒤에 원소 삽입하기
+<pre><code>result.insert(0, chr(i)) # 맨앞에 원소 삽입
+result.append(chr(i)) # 맨뒤에 원소 삽입</code></pre>
 
-리스트 맨 앞, 맨 뒤에 원소 삽입하기
-result.insert(0, chr(i)) # 맨앞에 원소 삽입
-result.append(chr(i)) # 맨뒤에 원소 삽입
-
-
-문자인지 숫자인지 판별하는 메소드
-
+* 문자인지 숫자인지 판별하는 메소드
+<pre><code>
     if value.isdigit(): # 숫자면
         print("숫자")
         
     else:
         print('문자')
+</code></pre>
 
+* 시간초과가 난다면
+    * list대신 dictionary로 사용 할 수 있다면 그걸로 사용하기
+    * list in 순회하는 거 반복문이니 사용하지말고 다른방법 생각해보기
 
-시간초과가 난다면
-list대신 dictionary로 사용 할 수 있다면 그걸로 사용하기
-list in 순회하는 거 반복문이니 사용하지말고 다른방법 생각해보기
-
-딕셔너리 이중 
-
+* 이중 딕셔너리 
+<pre><code>
 dic = {
     'A': {'A': 'A', 'G': 'C', 'C': 'A', 'T': 'G'},
     'G': {'A': 'C', 'G': 'G', 'C': 'T', 'T': 'A'},
@@ -327,10 +316,10 @@ dic = {
 }
 
 print(dic['A']['G']) # C
+</code></pre>
 
-
-입력 받을 때 간결한 표현 
-
+* 입력 받을 때 간결한 표현 
+<pre><code>
 N, M = list(map(int, sys.stdin.readline().split()))
 dice, board = list(), list()
 board.append(0)
@@ -341,33 +330,39 @@ for i in range(N):
 
 for i in range(M):
     dice.append(int(sys.stdin.readline()))
-
+</code></pre>
 얘보단 
-
-N, M = list(map(int, sys.stdin.readline().split()))
+<pre><code>N, M = list(map(int, sys.stdin.readline().split()))
 board = [0] + [int(input()) for _ in range(N)]
 dice = [0] + [int(input()) for _ in range(M)]
+</code></pre>
 
+* 배열 한줄로 적기
+<pre><code>lst = [i for i in range(1, 21)]</code></pre>
 
-배열 한줄로 적기
-lst = [i for i in range(1, 21)]
-
-프린트 하는데 리스트 원소를 한칸씩 띄우고
+* 프린트 하는데 리스트 원소를 한칸씩 띄우고
 그 다음에 개행 하고싶을때 
+<pre><code>
 for j in lst:
-            print(j, end=' ')
-        print()
+        print(j, end=' ')
+    print()
+</code></pre>
 
+* 딕셔너리 두번째 키값 가져오기
+<pre><code>print(list(direction.keys())[1]) # 두번째 키값 가져오기</code></pre>
 
-딕셔너리 두번째 키값 가져오기
-print(list(direction.keys())[1]) # 두번째 키값 가져오기
+* max value index 값 가져오기
+<pre><code>print(count_lst.index(max(count_lst)))</code></pre>
 
-max value index 값 가져오기
-print(count_lst.index(max(count_lst)))
-
-EOI
-while True:
+🔹 EOI
+<pre><code>while True:
     try:
 
     except:
         break
+</code></pre>
+
+
+🎈공부할 부분
+람다 배우기 max_val = max(t[1] for t in result_lst)
+try - except 공부

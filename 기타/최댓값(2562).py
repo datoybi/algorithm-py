@@ -1,9 +1,4 @@
-'''
-
-
-
-'''
-
+# 맞았습니다!
 m = [0, 0]
 for i in range(9):
     a = int(input())
