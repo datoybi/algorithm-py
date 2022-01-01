@@ -4,11 +4,8 @@
 
 '''
 
-m = [0, 0]
-for i in range(9):
-    a = int(input())
-    m[0] = max(a, m[0])
-    if a == m[0]:
-        m[1] = i+1
+r = [0, 4, 6, 5, 7, 8, 9, 10]
 
-print(m[0]); print(m[1])
+print(sorted(r))
+
+print(sorted(r) == r)

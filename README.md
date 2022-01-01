@@ -366,3 +366,6 @@ for j in lst:
 🎈공부할 부분
 람다 배우기 max_val = max(t[1] for t in result_lst)
 try - except 공부
+
+정렬값이랑 같은지(이미 정렬이 도이ㅓ있는지!?) 비교
+  if sorted(result) == result:
