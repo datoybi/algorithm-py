@@ -8,3 +8,5 @@ T분, V: 틀린횟수
 
 
 '''
+
+print(int(input(), 16))
