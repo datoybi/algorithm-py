@@ -9,4 +9,9 @@ T분, V: 틀린횟수
 
 '''
 
-print(int(input(), 16))
+A = int(input())
+B = int(input())
+
+print(A+B)
+print(A-B)
+print(A*B)
