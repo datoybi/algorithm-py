@@ -56,15 +56,20 @@ int&*&&&* c;
     # v = ''.join(tmp)
     # print(f'{result} {v};')
 
-n = int(input())
-score = []
-for i in range(n):
-    score.append(int(input()))
+# n = int(input())
+# score = []
+# for i in range(n):
+#     score.append(int(input()))
 
-count = 0
-for i in range(n-2, -1, -1):
-    if score[i] >= score[i+1]:
-        count += score[i] - score[i+1] + 1
-        score[i] = score[i+1]-1
+# count = 0
+# for i in range(n-2, -1, -1):
+#     if score[i] >= score[i+1]:
+#         count += score[i] - score[i+1] + 1
+#         score[i] = score[i+1]-1
 
-print(count)
+# print(count)
+
+import sys
+a, b = list(map(int, sys.stdin.readline().split()))
+print(b * 2 - a)
+
