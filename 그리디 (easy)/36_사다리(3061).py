@@ -1,16 +1,37 @@
 '''
+맞았습니다!
 문제는 이해했는데 어떻게 접근해야할 지 모르겠음 ㅠ
 입력 데이터 수 T
 사다리의 세로줄 N
-N번 도착점으로 도착하는 시작점의 번호
-1번 도착점으로 도착하는 시작점의 번호, 2번 도착점으로 도착하는 시작점의 번호
 
-차가 큰것부터 시작하기
-
-3 2 4 1
-1 2 3 4
-
-(1, 2, 1)
-힌트 
-1번과 2번사이 사다리 한줄을 긋는다는것은 1번과 2번의 자리를 바꾸는것과 같다
+bubble sort와 같다 i와 i-1중에 i-1 > i 면 inversion이 일어나서 
+결국엔 1이 맨 앞으로 오고 정렬하면 된다.
 '''
+
+import sys
+
+for _ in range(int(sys.stdin.readline())):
+    N = int(sys.stdin.readline())
+    ladder = list(map(int, sys.stdin.readline().split()))
+    cnt, i, flag = 0, N-1, False
+
+    while True:
+        if i == 0:
+            if flag == False:
+                break
+            i = N-1
+            flag = False
+        if ladder[i-1] > ladder[i]:
+            ladder[i-1], ladder[i] = ladder[i], ladder[i-1]
+            cnt += 1
+            flag = True
+            i -= 1
+        else:
+            i -= 1
+    print(cnt)
+
+
+
+
+
+
