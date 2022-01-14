@@ -1,31 +1,27 @@
 '''
-i번 스위치는 i의 배수 번호를 가지는 전구의 상태를 모두 반전시킨다.
+i번 스위치는 i의 배수 번호를 가지는 전구의 상태를 모두 반전시킨다. 
+인데 왜 ?!?!?!? bulb가 y일때만 반전시켜?
+
+문제가 이해가 되지 않는 문제이당.
+
 '''
 
-import sys, copy
+import sys
 
 bulb = list(sys.stdin.readline().rstrip())
+bulb.insert(0,'N')
 print(bulb)
-check = copy.deepcopy(bulb)
 cnt = 0
-for i in range(0,10):
+for i in range(1,len(bulb)):
     print(i)
-    print('쳌' , check.count('Y'))
-    if 'Y' not in check:
-        cnt = i
-        break
-    check = copy.deepcopy(bulb)
-    for j in range(len(bulb)):
-        if i == 0:
-            if check[j] == 'Y':
-                check[j] = 'N'
-            else:
-                check[j] = 'Y'
-        elif j % (i+1) == 0:
-            if check[j] == 'Y':
-                check[j] = 'N'
-            else:
-                check[j] = 'Y'
-    print(check)
+    if bulb[i] == 'Y': 
+        for j in range(i, len(bulb), i):
+            if j % i == 0:
+                if bulb[j] == 'Y':
+                    bulb[j] = 'N'
+                else:
+                    bulb[j] = 'Y'
+        cnt += 1
+    print(bulb)
 
-print(cnt-1)
+print(cnt)
