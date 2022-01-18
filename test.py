@@ -1,8 +1,6 @@
 '''
+5
+1 7 8 9 10
 
+8
 '''
-
-print(ord('A'))
-print(ord('Z'))
-lst = 'AB'
-print(''.join(lst[1]+lst[0]))
