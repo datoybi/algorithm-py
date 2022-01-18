@@ -372,3 +372,5 @@ try - except 공부
 정렬값이랑 같은지(이미 정렬이 도이ㅓ있는지!?) 비교
   if sorted(result) == result:
 
+소숫점 자리수가 있는지 확인하는 메서드 : (1.0).is_integer()
+if value.is_integer()
