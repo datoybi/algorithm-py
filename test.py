@@ -1,13 +1,10 @@
 '''
-1-10+2-5-2
-
--9
--11
--16
--18
+6
+AAGTCG
+T AAGTT
+T AAGT
+A AAA
+A AA
+A A
+A
 '''
-a = input().split('-')
-b = [sum(map(int, i.split('+'))) for i in a]
-print(a)
-print(b)
-print(b[0] * 2 - sum(b))

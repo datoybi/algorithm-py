@@ -1,6 +1,6 @@
 '''
 문제 뭔말이냐.. 
-아놔.. 제일 끝에 있는 두 개의 염기를 양 끝으로 이해했는데 그게 아니고!!!! 
+아놔.. 제일 끝에 있는 두 개의 를 양 끝으로 이해했는데 그게 아니고!!!! 
 len(A)-1,len(A)-2를 말한거였다.
 
 '''
@@ -17,12 +17,15 @@ decoder = {
 
 n = int(sys.stdin.readline())
 word = sys.stdin.readline().rstrip()
+new = decoder[word[-1]][word[-2]]
+print(new)
+for i in range(n-3, -1, -1):
+    print('i : ' , word[i])
+    new = decoder[new][word[i]]
+    print(new)
 
-for _ in range(n-1):
-    new = decoder[word[-1]][word[-2]]
-    word = word[:-2] + new
 
-print(word)
+# print(word)
 
 
 # 메모리 초과

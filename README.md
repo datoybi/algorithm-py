@@ -228,6 +228,9 @@ lst.sort(key=len)
 lst.sort(key = lambda x : [x[-2],  x[-1]]) #-2번째오름차순 후 -1번째 오름차순
 </code></pre>
 
+리스트의 두 원소중 차로 정렬 
+lst.sort(key = lambda x : x[1]-x[0])
+
 * 0인 원소의 list 만들기
 <pre><code>
 zero_lst = [0 for _ in range(130)]
