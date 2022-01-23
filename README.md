@@ -376,4 +376,8 @@ try - except 공부
   if sorted(result) == result:
 
 소숫점 자리수가 있는지 확인하는 메서드 : (1.0).is_integer()
-if value.is_integer()
+if value.is_integer()****
+
+
+for i in range(zero):
+    S.pop(-S[::-1].index('0')-1) # 뒤부터 해당 원소 뺴낼 떄 사용 
