@@ -3,14 +3,13 @@
 
 import sys
 
-lst = list()
 N = int(sys.stdin.readline())
-cnt, flag = N, False
+dp = [5001] * (N+5)
+dp[3] = 1; dp[5] = 1
 
-for i in range((N//5)+1):
-    for j in range((N//3)+1):
-        if i*5 + j*3 == N:
-            cnt = min(cnt, i+j)
-            flag = True
-            
-print(-1 if flag == False else cnt)
+for i in range(6, N+1):
+    dp[i] = min(dp[i-3], dp[i-5]) + 1
+    
+print(dp[N] if dp[N] < 5001 else -1)
+
+
