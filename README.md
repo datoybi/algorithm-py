@@ -360,7 +360,6 @@ for j in lst:
 🔹 EOI
 <pre><code>while True:
     try:
-
     except:
         break
 </code></pre>
