@@ -360,7 +360,6 @@ for j in lst:
 🔹 EOI
 <pre><code>while True:
     try:
-
     except:
         break
 </code></pre>
@@ -381,6 +380,7 @@ if value.is_integer()****
 
 for i in range(zero):
     S.pop(-S[::-1].index('0')-1) # 뒤부터 해당 원소 뺴낼 떄 사용 
+<<<<<<< HEAD
 
 formatting using %
 
@@ -401,3 +401,5 @@ print(s2)
 print('%.3f' % num2) 
 
 print('my name is %s , and i am %d years old. also my height is %.3f' % ('dasom', 29, 166.6))
+=======
+>>>>>>> 8d347ec7bc4bab74c4cdab636fb3b5247d9885a8
