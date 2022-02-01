@@ -381,3 +381,23 @@ if value.is_integer()****
 
 for i in range(zero):
     S.pop(-S[::-1].index('0')-1) # 뒤부터 해당 원소 뺴낼 떄 사용 
+
+formatting using %
+
+'''
+%s -> 문자열
+%d -> 정수
+%f -> 실수
+'''
+
+num1 = 50
+s1 = 'my age is %d' % num1
+print(s1)
+
+num2 = 50.1234567
+s2 = 'print float is %f' % num2
+print(s2)
+
+print('%.3f' % num2) 
+
+print('my name is %s , and i am %d years old. also my height is %.3f' % ('dasom', 29, 166.6))
