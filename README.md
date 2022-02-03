@@ -402,4 +402,72 @@ print('%.3f' % num2)
 
 print('my name is %s , and i am %d years old. also my height is %.3f' % ('dasom', 29, 166.6))
 =======
->>>>>>> 8d347ec7bc4bab74c4cdab636fb3b5247d9885a8
+
+# 얕은 복사 깊은 복사 공부!!
+# 얕은복사
+# = 을 이용한 얕은 복사
+print('\n=을 이용한 얕은 복사')
+arr1 = [1,2,3]
+arr2 = arr1 
+print('arr1: ' , arr1, '참조값 : ' , hex(id(arr1)))
+print('arr2: ' , arr2, '참조값 : ' , hex(id(arr2))) # 참조값이 같다.
+arr2.append(100)
+print(arr1, arr2) # arr2에만 넣었으나 arr1에도 적용 (참조값이 같기 때문)
+print('=' * 50)
+
+# [:] 슬라이싱을 이용한 깊은 복사같은 얕은 복사
+print('\n슬라이싱을 이용한 얕은 복사')
+arr3 = [4,5,6, [2,4,8]]
+arr4 = arr3[:] # 슬라이싱 복사
+print('arr3: ' , arr3, '참조값 : ' , hex(id(arr3)))
+print('arr4: ' , arr4, '참조값 : ' , hex(id(arr4))) # 둘의 참조값이 다르다!
+arr4.append(100)
+print(arr3, arr4) # arr4만 바뀌었다 여기까지만 본다면 깊은 복사같다. 
+# 그러나 얕은 복사라고 하는 이유는?
+# 리스트 안에 있는 리스트를 보자.
+print('arr3[3]: ' , arr3[3], '참조값 : ' , hex(id(arr3[3])))
+print('arr4[3]: ' , arr4[3], '참조값 : ' , hex(id(arr4[3]))) # 둘의 참조값이 같다!
+# 리스트 안에 있는 리스트에 값 추가
+arr3[3].append(9999)
+print(arr3, arr4) # 두 리스트안의 리스트에 삽입 됨을 알 수 있다.
+print('=' * 50)
+
+# copy 메서드로 복사 - [:] 와 동일한 결과가 나온다.
+print('\ncopy 메서드를 이용한 얕은 복사')
+arr3 = [4,5,6, [2,4,8]]
+arr4 = arr3.copy() # copy 복사
+print('arr3: ' , arr3, '참조값 : ' , hex(id(arr3)))
+print('arr4: ' , arr4, '참조값 : ' , hex(id(arr4))) # 둘의 참조값이 다르다!
+arr4.append(100)
+print(arr3, arr4) 
+# 리스트 안에 있는 리스트
+print('arr3[3]: ' , arr3[3], '참조값 : ' , hex(id(arr3[3])))
+print('arr4[3]: ' , arr4[3], '참조값 : ' , hex(id(arr4[3]))) # 둘의 참조값이 같다!
+# 리스트 안에 있는 리스트에 값 추가
+arr3[3].append(9999)
+print(arr3, arr4) # 두 리스트안의 리스트에 삽입 됨을 알 수 있다.
+
+print('=' * 50)
+import copy
+print('\n깊은 복사 copy.deepcopy')
+arr3 = [4,5,6, [2,4,8]]
+arr4 = copy.deepcopy(arr3) # 슬라이싱 복사
+print('arr3: ' , arr3, '참조값 : ' , hex(id(arr3)))
+print('arr4: ' , arr4, '참조값 : ' , hex(id(arr4))) # 둘의 참조값이 다르다!
+arr4.append(100)
+print(arr3, arr4) 
+# 리스트 안에 있는 리스트
+print('arr3[3]: ' , arr3[3], '참조값 : ' , hex(id(arr3[3])))
+print('arr4[3]: ' , arr4[3], '참조값 : ' , hex(id(arr4[3]))) # 둘의 참조값이 같다!
+# 리스트 안에 있는 리스트에 값 추가
+arr3[3].append(9999)
+print(arr3, arr4) # 두 리스트안의 리스트에 삽입 됨을 알 수 있다.
+print('=' * 50)
+
+# immutable 한 객체(int)
+print('\nimmutable 한 객체(int)')
+num1 = 50
+num2 = num1 # = 복사
+print(num1, num2) # 50 50
+num2 += 1
+print(num1, num2) # 50 51 : immutable 한 객체는 복사를 해도 같은곳을 참조하지 않는다
