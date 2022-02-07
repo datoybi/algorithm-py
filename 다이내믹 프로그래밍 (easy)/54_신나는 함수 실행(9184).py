@@ -1,6 +1,6 @@
 # 맞았습니다!
 '''
-dp[1][1][21] 일때 값이 구해져있지 않았다는걸 몰랐다 ㅠㅠ 왜 거기까지 생각이 안미치는건지 에효호
+dp[1][1][21] 일때 값이 구해져있지 않았다는걸 몰랐다 ㅠㅠ 왜 거기까지 생각이 안미치는건지 에효효
 '''
 
 dp = [[[0 for _ in range(51)] for j in range(51)] for _ in range(51)]
@@ -24,11 +24,7 @@ while True:
     A, B, C = map(int, input().split()) 
     a = A; b = B; c = C
     if a == -1 and b == -1 and c == -1 : break
-    
-    if A <= 0:
-        a = 0
-    if B <= 0:
-        b = 0
-    if C <= 0:
-        c = 0
+    if A <= 0: a = 0
+    if B <= 0: b = 0
+    if C <= 0: c = 0
     print(f'w({A}, {B}, {C}) = {dp[a][b][c]}')
