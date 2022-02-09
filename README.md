@@ -471,3 +471,16 @@ num2 = num1 # = 복사
 print(num1, num2) # 50 50
 num2 += 1
 print(num1, num2) # 50 51 : immutable 한 객체는 복사를 해도 같은곳을 참조하지 않는다
+
+# 파이썬에서의 Stack, Queue
+Stack - list의 append, pop 사용
+
+queue
+from collections import deque
+사용하기 
+queue = deque()
+
+queue.append(5)
+queue.popleft()
+queue.reverse()
+print(queue)
