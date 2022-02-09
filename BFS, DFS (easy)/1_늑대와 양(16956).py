@@ -11,7 +11,7 @@
 
 n, m = map(int, input().split())
 lst = [list(input()) for _ in range(n)]
-lst.insert(0,)
+lst.insert(0,[])
 print(lst)
 
 visited = [False] * n
