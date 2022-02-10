@@ -1,41 +1,33 @@
+from collections import deque
 import sys
-sys.setrecursionlimit(10000)
- 
-t= int(input())
-for _ in range(t):
-    m,n,k = map(int,input().split())
-    graph = [[0]*m for _ in range(n)]
- 
-    for _ in range(k):
-        x,y = map(int,input().split())
-        graph[y][x] = 1
-    dx = [-1,1,0,0]
-    dy = [0,0,-1,1]
- 
-    def dfs(x,y):
-        if x<0 or x>=n or y<0 or y>=m:
-            return False
-        if graph[x][y]==1:
-            graph[x][y] = 0
-            for i in range(4):
-                dfs(x+dx[i],y+dy[i])
-            return True
-        return False
+input = sys.stdin.readline
+
+n,m = map(int,input().split())
+link = [[] for _ in range(n+1)]
+for _ in range(m):
+    a,b = map(int,input().split())
+    # 선택한 노드부터 쭉 뻗어나갈 것이므로 링크를 반대로 달아준다.
+    link[b].append(a)
+
+maxLink,ans = 0,[]
+for i in range(1,n+1):
+    visited = [False]*(n+1)
+    visited[i] = True
+    q = deque([i])
+    
+    # BFS
     cnt = 0
-    for i in range(n):
-        for j in range(m):
-            if dfs(i,j)==True:
-                cnt +=1
- 
-    print(cnt)
-
-'''
-4 5 1
-1 2
-1 3
-1 4
-2 4
-3 4
-
-
-'''
+    while q:
+        v = q.popleft()
+        for toNode in link[v]:
+            if not visited[toNode]:
+                visited[toNode] = True
+                cnt += 1
+                q.append(toNode)
+    
+    if cnt > maxLink:
+        maxLink = cnt
+        ans = [i]
+    elif cnt == maxLink:
+        ans.append(i)
+print(*ans)
