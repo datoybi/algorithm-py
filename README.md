@@ -484,3 +484,7 @@ queue.append(5)
 queue.popleft()
 queue.reverse()
 print(queue)
+
+# 재귀 사용시 꼭 명시해두기
+import sys
+sys.setrecursionlimit(10 ** 6)
