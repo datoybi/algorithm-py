@@ -9,6 +9,9 @@ DFS(Depth-First Search) : 깊이 우선 탐색 - Stack 사용
 
 dfs 작은 순서대로 출력하고 싶을 때는 큰 값부터 넣어야한다 
 나중에 넣은 값이 먼저 빠지기 떄문 
+호출을 한 그래프가 트리에서 부모이다.
+DFS는 재귀, BFS는 재귀를 사용하지 않는 방법이다.
+
 '''
 
 def dfs(graph, v, visited):

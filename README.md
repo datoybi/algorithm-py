@@ -488,3 +488,12 @@ print(queue)
 # 재귀 사용시 꼭 명시해두기
 import sys
 sys.setrecursionlimit(10 ** 6)
+boj 에서는 1000으로 되어있다
+
+# 공백없는 숫자 리스트에 인트형으로 넣기
+board = []
+for i in range(n):
+    tmp = input().rstrip()
+    board.append(list(map(int, str(tmp))))
+    
+graph = [list(map(int, list(input()))) for _ in range(M)]
