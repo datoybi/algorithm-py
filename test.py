@@ -1,27 +1,34 @@
 from collections import deque
-import sys
-input = sys.stdin.readline
+
 n, m = map(int, input().split())
-graph = [[] for _ in range(n+1)]
-for i in range(m):
-    a, b = map(int, input().split())
-    graph[a].append(b)
-    graph[b].append(a)
-visited = [False] * (n+1)
+a = [list(map(int, input().split())) for _ in range(n)]
+dx = (-1, -1, -1, 0, 0, 1, 1, 1)
+dy = (-1, 0, 1, -1, 1, -1, 0, 1)
+q = deque()
 
-def bfs(v):
-    queue = deque([v]) 
-    visited[v] = True
-    while queue:
-        x = queue.popleft()
-        for i in graph[x]:
-            if not visited[i]:
-                queue.append(i)
-                visited[i] = True
-cnt = 0
-for i in range(1, n+1):
-    if visited[i] == False:
-        bfs(i)
-        cnt += 1
+def bfs():
+    while q:
+        print(q)
+        x, y = q.popleft()
+        for k in range(8):
+            nx, ny = x+dx[k], y+dy[k]
+            if nx < 0 or nx >= n or ny < 0 or ny >= m:
+                continue
+            if a[nx][ny] == 0: # 0이면
+                # print(nx, ny)
+                q.append((nx, ny))
+                a[nx][ny] = a[x][y]+1
 
-print(cnt)
+for i in range(n):
+    for j in range(m):
+        if a[i][j] == 1:
+            q.append((i, j))
+bfs()
+print(max(map(max, a))-1)
+print(a)
+
+
+'''
+1 3
+1 0 0
+'''
