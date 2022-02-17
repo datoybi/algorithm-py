@@ -1,34 +1,18 @@
 from collections import deque
-import sys
 
-def bfs(node):
+def bfs(S, T):
     q = deque()
-    q.append(node)
-    check[node] = 0
+    q.append((S, T, 0))
+    check = [-1]*(200)
     while q:
-        node = q.popleft()
-        d = [node-1, node+1]
-        if graph[node]:
-            d += graph[node]
-            print(d)
-        for n in d:
-            if (1 <= n <= N) and check[n] == -1:
-                q.append(n)
-                check[n] = check[node]+1
-            if n == E:
-                return check[n]
+        node, t, c = q.popleft()
+        if node <= t and check[node] == -1:
+            q.append((node*2, t+3, c+1))
+            q.append((node+1, t, c+1))
+            if node == t:
+                return c
 
-N, M = map(int, sys.stdin.readline().split())
-S, E = map(int, sys.stdin.readline().split())
-graph = [[] for _ in range(N+1)]
-check = [-1]*(N+1)
-for _ in range(M):
-    u, v = map(int, sys.stdin.readline().split())
-    graph[u].append(v)
-    graph[v].append(u)
-
-print(graph)
-print(check)
-
-cnt = bfs(S)
-print(cnt)
+C = int(input())
+for _ in range(C):
+    S, T = map(int, input().split())
+    print(bfs(S, T))
