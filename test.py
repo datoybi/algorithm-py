@@ -1,34 +1,34 @@
 from collections import deque
+import sys
 
-n, m = map(int, input().split())
-a = [list(map(int, input().split())) for _ in range(n)]
-dx = (-1, -1, -1, 0, 0, 1, 1, 1)
-dy = (-1, 0, 1, -1, 1, -1, 0, 1)
-q = deque()
-
-def bfs():
+def bfs(node):
+    q = deque()
+    q.append(node)
+    check[node] = 0
     while q:
-        print(q)
-        x, y = q.popleft()
-        for k in range(8):
-            nx, ny = x+dx[k], y+dy[k]
-            if nx < 0 or nx >= n or ny < 0 or ny >= m:
-                continue
-            if a[nx][ny] == 0: # 0이면
-                # print(nx, ny)
-                q.append((nx, ny))
-                a[nx][ny] = a[x][y]+1
+        node = q.popleft()
+        d = [node-1, node+1]
+        if graph[node]:
+            d += graph[node]
+            print(d)
+        for n in d:
+            if (1 <= n <= N) and check[n] == -1:
+                q.append(n)
+                check[n] = check[node]+1
+            if n == E:
+                return check[n]
 
-for i in range(n):
-    for j in range(m):
-        if a[i][j] == 1:
-            q.append((i, j))
-bfs()
-print(max(map(max, a))-1)
-print(a)
+N, M = map(int, sys.stdin.readline().split())
+S, E = map(int, sys.stdin.readline().split())
+graph = [[] for _ in range(N+1)]
+check = [-1]*(N+1)
+for _ in range(M):
+    u, v = map(int, sys.stdin.readline().split())
+    graph[u].append(v)
+    graph[v].append(u)
 
+print(graph)
+print(check)
 
-'''
-1 3
-1 0 0
-'''
+cnt = bfs(S)
+print(cnt)
