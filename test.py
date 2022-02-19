@@ -1,18 +1,20 @@
-from collections import deque
+import sys
+input = sys.stdin.readline
 
-def bfs(S, T):
-    q = deque()
-    q.append((S, T, 0))
-    check = [-1]*(200)
-    while q:
-        node, t, c = q.popleft()
-        if node <= t and check[node] == -1:
-            q.append((node*2, t+3, c+1))
-            q.append((node+1, t, c+1))
-            if node == t:
-                return c
+def dfs(num, arr):
+    arr[num] = -2
+    for i in range(len(arr)):
+        if num == arr[i]:
+            dfs(i, arr)
 
-C = int(input())
-for _ in range(C):
-    S, T = map(int, input().split())
-    print(bfs(S, T))
+n = int(input())
+arr = list(map(int, input().split()))
+k = int(input())
+count = 0
+
+dfs(k, arr)
+count = 0
+for i in range(len(arr)):
+    if arr[i] != -2 and i not in arr:
+        count += 1
+print(count)
