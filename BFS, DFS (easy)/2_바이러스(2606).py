@@ -21,3 +21,32 @@ def dfs(start):
 
 dfs(1)
 print(cnt)
+
+
+'''
+# 두번째로 푼거
+import sys
+input = sys.stdin.readline
+N = int(input())
+graph = [[] for _ in range(N+1)]
+visited = [False for _ in range(N+1)]
+
+for i in range(int(input())):
+    a, b = map(int, input().split())
+    graph[a].append(b)
+    graph[b].append(a)
+cnt = 0
+
+def dfs(v):
+    global cnt
+    visited[v] = True
+    for i in graph[v]:
+        if visited[i] == False:
+            dfs(i)
+            cnt += 1
+
+dfs(1)
+print(cnt)
+
+
+'''
