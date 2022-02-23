@@ -1,5 +1,4 @@
 '''
-1
 10 8 17
 0 0
 1 0
@@ -19,17 +18,31 @@
 8 6
 9 6
 '''
-import sys
 from collections import deque
+import sys
 input = sys.stdin.readline
 
-for i in range(int(input())):
-    M, N, K = map(int, input().split())
-    graph = [[0 for _ in range(N)] for _ in range(M)]
-    
-    for i in range(K):
-        a, b = map(int, input().split())
-        graph[a][b] = 1
+# tc
+M, N, K = map(int, input().split())
+graph = [[0 for _ in range(N)] for _ in range(M)]
+print(graph)
 
-    print(graph)
-    
+for i in range(K):
+    a, b = map(int, input().split())
+    graph[a][b] = 1
+
+print(graph)
+
+dx = [-1, 1, 0, 0]
+dy = [0, 0, -1, 1] 
+
+def bfs(x, y):
+    queue = deque()
+    queue.append([x, y])
+    while queue:
+        i, j = queue.popleft()
+        for k in range(4):
+            nx, ny = i + dx[k], j + dy[k]
+            if 0 <= nx < 
+
+
