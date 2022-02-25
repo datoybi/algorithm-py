@@ -1,48 +1,26 @@
-'''
-10 8 17
-0 0
-1 0
-1 1
-4 2
-4 3
-4 5
-2 4
-3 4
-7 4
-8 4
-9 4
-7 5
-8 5
-9 5
-7 6
-8 6
-9 6
-'''
 from collections import deque
 import sys
 input = sys.stdin.readline
 
-# tc
-M, N, K = map(int, input().split())
-graph = [[0 for _ in range(N)] for _ in range(M)]
-print(graph)
+# dfs
+N, M, V = map(int, input().split())
+graph = [[] for _ in range(N+1)]
+# print(graph)    
 
-for i in range(K):
+for _ in range(M):
     a, b = map(int, input().split())
-    graph[a][b] = 1
+    graph[a].append(b)
+    graph[b].append(a)
+    
+print(graph) # [[], [2, 3, 4], [1, 4], [1, 4], [1, 2, 3]]
+visited = [False] * (N+1)
+print(visited)
 
-print(graph)
+def dfs(v):
+    print(v)
+    visited[v] = True
+    for i in graph[v]:
+        if visited[i] == False:
+            dfs(i)
 
-dx = [-1, 1, 0, 0]
-dy = [0, 0, -1, 1] 
-
-def bfs(x, y):
-    queue = deque()
-    queue.append([x, y])
-    while queue:
-        i, j = queue.popleft()
-        for k in range(4):
-            nx, ny = i + dx[k], j + dy[k]
-            if 0 <= nx < 
-
-
+print()
