@@ -6,3 +6,6 @@ Graph 자료구조
 - edge = link (선)
 
 '''
+
+n = input()
+print(n + '??!')
