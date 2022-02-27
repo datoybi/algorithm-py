@@ -28,3 +28,43 @@ for _ in range(int(input())):
                 cnt += 1
     
     print(cnt)
+
+'''
+두번째 시도
+from collections import deque
+import sys
+input = sys.stdin.readline
+
+for _ in range(int(input())):
+    M, N, K = map(int, input().split())
+    graph = [[0 for _ in range(N)] for _ in range(M)]
+
+    for _ in range(K):
+        a, b = map(int, input().split())
+        graph[a][b] = 1
+
+    dx = [-1, 1, 0, 0]
+    dy = [0, 0, -1, 1] 
+
+    def bfs(x, y):
+        queue = deque()
+        queue.append([x, y])
+        graph[x][y] = 0
+        while queue:
+            i, j = queue.popleft()
+            for k in range(4):
+                nx, ny = i + dx[k], j + dy[k]
+                if 0 <= nx < M and 0 <= ny < N and graph[nx][ny] == 1:
+                    queue.append([nx, ny])
+                    graph[nx][ny] = 0
+
+    cnt = 0
+    for i in range(M):
+        for j in range(N):
+            if graph[i][j] == 1:
+                bfs(i, j)
+                cnt += 1
+
+    print(cnt)
+
+'''
