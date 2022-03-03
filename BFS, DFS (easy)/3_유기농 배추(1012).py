@@ -67,4 +67,40 @@ for _ in range(int(input())):
 
     print(cnt)
 
+
+ # 세번째 시도
+ from collections import deque
+import sys
+input = sys.stdin.readline
+sys.setrecursionlimit(10000)
+
+for _ in range(int(input())):
+    # dfs
+    N, M, V = map(int, input().split())
+    graph = [[0 for _ in range(M)] for _ in range(N)]
+
+    for _ in range(V):
+        a, b = map(int, input().split())
+        graph[a][b] = 1
+
+    dx = [-1, 1, 0, 0]; dy = [0, 0, -1, 1]
+
+    def dfs(x, y):
+        graph[x][y] = 0
+        for i in range(4):
+            nx, ny = x + dx[i], y + dy[i]
+            if 0 <= nx < N and 0 <= ny < M and graph[nx][ny] == 1:
+                graph[nx][ny] = 0
+                dfs(nx, ny)
+
+    cnt = 0
+    for i in range(N):
+        for j in range(M):
+            if graph[i][j] == 1:
+                dfs(i, j)
+                cnt += 1
+
+    print(cnt)
+
+
 '''
