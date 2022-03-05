@@ -1,4 +1,4 @@
-import sys
+import sy
 input = sys.stdin.readline
 from collections import deque
 
