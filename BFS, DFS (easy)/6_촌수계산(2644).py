@@ -28,3 +28,40 @@ def bfs(start):
 bfs(x)
 # print(result)
 print(result[y] if result[y] != 0 else -1)
+
+'''
+# 두번째 시도
+
+import sys
+input = sys.stdin.readline
+from collections import deque
+
+n = int(input())
+start, end = map(int, input().split())
+m = int(input())
+graph = [[] for _ in range(n+1)]
+visited = [False for _ in range(n+1)] 
+result = [0 for _ in range(n+1)]
+
+for i in range(1, m+1):
+    x, y = map(int, input().split())
+    graph[x].append(y)
+    graph[y].append(x)
+
+def bfs(start):
+    queue = deque([start])
+    visited[start] = True
+    while queue:
+        x = queue.popleft()
+
+        for i in graph[x]:
+            if not visited[i]:
+                result[i] = result[x] + 1
+                queue.append(i);
+                visited[i] = True
+
+bfs(start)
+print(result[end] if result[end] != 0 else -1)
+
+
+'''
