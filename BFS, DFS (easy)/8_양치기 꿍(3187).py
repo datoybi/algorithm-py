@@ -35,5 +35,48 @@ for i in range(r):
                 wolf_tot += wolf
 print(sheep_tot, wolf_tot)
             
+'''
+# 두번째 시도!!! 내가 맞췄다 답지 하나도 안보고!@#
+import sys
+input = sys.stdin.readline
+from collections import deque
 
+R, C = map(int, input().split())
+graph = [ list(input().rstrip()) for _ in range(R)]
+visited = [[False for _ in range(C)] for _ in range(R)]
+dx, dy = [-1, 1, 0, 0], [0, 0, -1, 1]
 
+def bfs(x, y):
+    wolf, sheep = 0, 0
+    queue = deque()
+    queue.append([x, y])
+    visited[x][y] = True
+    while queue:
+        x, y = queue.popleft();
+        if graph[x][y] == 'v':
+            wolf += 1
+        if graph[x][y] == 'k':
+            sheep += 1
+        graph[x][y] = '.'
+        for i in range(4):
+            nx, ny = dx[i] + x, dy[i] + y
+            if 0 <= nx < R and 0 <= ny < C and not visited[nx][ny] and graph[nx][ny] != '#':
+                visited[nx][ny] = True
+                queue.append([nx, ny])
+    if sheep > wolf:
+        wolf = 0
+    else:
+        sheep = 0
+    return sheep, wolf
+
+t_sheep, t_wolf = 0, 0
+for i in range(R):
+    for j in range(C):
+        if graph[i][j] == 'v' or graph[i][j] == 'k':
+            sheep, wolf = bfs(i, j)
+            t_sheep += sheep
+            t_wolf += wolf
+
+print(t_sheep , t_wolf)
+
+'''
