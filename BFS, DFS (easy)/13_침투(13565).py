@@ -54,3 +54,34 @@ if -1 in board[-1]:
     print('YES')
 else:
     print('NO')
+
+
+'''
+두번째 시도 -> 맞췃당 게다가 훨씬 간결한듯
+import sys
+input = sys.stdin.readline
+from collections import deque
+
+M, N = map(int, input().split())
+graph = [list(input().rstrip()) for _ in range(M)]
+dx, dy = [-1, 1, 0, 0], [0, 0, -1, 1]
+
+def bfs(x, y):
+    queue = deque();
+    queue.append([x, y])
+    graph[x][y] = '2'
+    while queue:
+        a, b = queue.popleft()
+        for i in range(4):
+            nx, ny = dx[i] + a, dy[i] + b
+            if 0 <= nx < M and 0 <= ny < N and graph[nx][ny] == '0':
+                queue.append([nx, ny])
+                graph[nx][ny] = '2'
+
+for i in range(N):
+    if graph[0][i] == '0':
+        bfs(0, i)
+
+print('YES' if '2' in graph[M-1] else 'NO')
+
+'''
