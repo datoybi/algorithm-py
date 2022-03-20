@@ -2,67 +2,24 @@ import sys
 input = sys.stdin.readline
 from collections import deque
 
-dx = [-2, -2, -1, 1, 2, 2, 1, -1]
-dy = [-1, 1, 2, 2, 1, -1, -2, -2]
+n = int(input())
+graph = list(map(int, input().split()))
+graph.insert(0, 0)
+s = int(input())
+# print(graph)
+visited = [False for _ in range(n+1)]
 
-i = int(input())
-graph = [[0 for _ in range(i)] for _ in range(i)]
-print(graph)
-
-# print(visited)
-start_x, start_y = map(int, input().split())
-end_x, end_y = map(int, input().split())
-
-def bfs(x, y):
-    cnt = 999999999
-    total = 0
-    visited = [[False for _ in range(i)] for _ in range(i)]
-    queue = deque()
-    queue.append([x, y])
+def bfs(v):
+    queue = deque([v])
+    visited[v] = True
     while queue:
-        x, y = queue.popleft()
-        print(x, y, total)
-        if x == end_x and y == end_y:
-            cnt = min(cnt, total)
-            print(cnt)
-        total += 1
-        for k in range(8):
-            nx, ny = dx[k] + x, dy[k] + y
-            if 0 <= nx < i and 0 <= ny < i and not visited[nx][ny]:
-                visited[nx][ny] = True
-                queue.append([nx, ny])
-           
-                # 여기 넣은거 어캐 다 뺴지?
-
-bfs(start_x, start_y)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-'''
-
-8
-0 0
-7 0
-'''
+        x = queue.popleft()
+        for i in [-graph[x], graph[x]]:
+            tmp = x + i
+            if 0 <= tmp <= n and not visited[tmp]:
+                queue.append(tmp)
+                visited[tmp] = True
+                            
+bfs(s)
+print(visited)
+print(visited[1:].count(True))
