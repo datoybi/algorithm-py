@@ -5,7 +5,6 @@ for _ in range(int(input())):
     N = int(input())
     graph = [int(input()) for _ in range(N)]
     graph.insert(0, 0)
-    print(graph)
     result = [0 for _ in range(N+1)]
 
     def dfs(v):
@@ -14,5 +13,6 @@ for _ in range(int(input())):
             result[i] = result[v] + 1
             dfs(i)
 
-    print(dfs(1))
+    dfs(1)
+    print(result[N])
 
