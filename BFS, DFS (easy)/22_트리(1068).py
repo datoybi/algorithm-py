@@ -8,11 +8,9 @@ input = sys.stdin.readline
 N = int(input())
 graph = list(map(int, input().split()))
 d = int(input())
-print(graph)
 
 def dfs(v):
-    graph[v] = -2 # -2로 접근 불가능하게 만듦
-    print(v, end=' ')
+    graph[v] = -2 # 연결된 모든 노드들은 -2로 변환
     for i in range(len(graph)):
         if v == graph[i]:
             dfs(i)
@@ -23,5 +21,4 @@ for i in range(len(graph)):
     if graph[i] != -2 and i not in graph: # 그래프 리스트 안에 없으면(부모가 없으면) 리프노드 
         cnt += 1
 
-print(graph)
 print(cnt)
