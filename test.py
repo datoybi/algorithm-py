@@ -1,45 +1,42 @@
-# import sys
-# input = sys.stdin.readline
-# n = int(input())
-# lst = list(map(int, input().split()))
-# d = int(input())
-# print(lst)
-
-# def dfs(num, lst):
-#     lst[num] = -2
-#     print(num, end=' ')
-#     for i in range(len(lst)):
-#         if num == lst[i]:
-#             dfs(i, lst)
-
-# dfs(d, lst)
-# cnt = 0
-# for i in range(len(lst)):
-#     if lst[i] != -2 and i not in lst:
-#         cnt += 1
-# print(cnt)
-
 import sys
-input = sys.stdin.readline
+sys.setrecursionlimit(10 ** 6)
 
-n = int(input())
-lst = list(map(int, input().split()))
-d = int(input())
-print(lst)
+# dfs 탐색
+def dfs(a, b):
+    global trigger
+    dx = [1, -1, 0, 0, 1, 1, -1, -1]
+    dy = [0, 0, 1, -1, 1, -1, -1, 1]
+    visited[a][b] = True
 
-def dfs(num):
-    lst[num] = -2
-    print(num, end=' ')
-    for i in range(len(lst)):
-        if num == lst[i]:
-            dfs(i)
+    for i in range(8):
+        x = a + dx[i]
+        y = b + dy[i]
 
-dfs(d)
+        if -1 < x < n and -1 < y < m:
+            # 주변 산봉우리보다 작으면 False
+            if graph[a][b] < graph[x][y]:
+                trigger = False
+            # 같은 높이의 산봉우리 탐색
+            if not visited[x][y] and graph[x][y] == graph[a][b]:
+                dfs(x, y)
+
+
+n, m = map(int, sys.stdin.readline().split())
+# 2차원 그래프를 표현
+graph = [list(map(int, sys.stdin.readline().split())) for _ in range(n)]
+# 탐색 여부
+visited = [[False] * m for _ in range(n)]
 cnt = 0
-for i in range(len(lst)):
-    if lst[i] != -2 and i not in lst:
-        print('!')
-        cnt += 1
 
-print(lst)
+for i in range(n):
+    for j in range(m):
+        # 산봉우리가 0보다 크고 탐색하지 않았다면
+        if graph[i][j] > 0 and not visited[i][j]:
+            trigger = True
+            dfs(i, j)
+
+            # 산봉우리이면 카운트
+            if trigger:
+                cnt += 1
+
 print(cnt)
