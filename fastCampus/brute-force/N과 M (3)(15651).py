@@ -26,26 +26,42 @@
                     # 매번 k+1번 부터 M번 원소로 재귀호출 해주기
 
 '''
+ 
+# import sys
+# input = sys.stdin.readline
+
+# n, m = map(int, input().split(' '))
+# selected = [0 for _ in range(m)]
+# print(selected)
+# # [0, 0, 0]
+# # [0, 0, 0, 0, 0]
+# def rec_func(k):
+#     if k == m:
+#         for x in selected:
+#             sys.stdout.write(str(x) + ' ')
+#         sys.stdout.write('\n')
+#     else:
+#         for cand in range(1, n+1): # 1 ~ 4
+#             selected[k] = cand
+#             print('selected[k] : ' , selected[k])
+#             print('k : ' , k , ' , cand :' , cand)
+#             rec_func(k + 1)
+#             selected[k] = 0
+
+# rec_func(0)
 
 import sys
+
 input = sys.stdin.readline
-
-n, m = map(int, input().split(' '))
+n, m = map(int, input().split())
 selected = [0 for _ in range(m)]
-used = [0 for _ in range(n+1)]
-print(selected)
-print(used)
-# [0, 0, 0]
-# [0, 0, 0, 0, 0]
-def rec_func(k):
-    if k == m:
-        for x in selected:
-            sys.stdout.write(str(x) + ' ')
-        sys.stdout.write('\n')
-    else:
-        for cand in range(1, n+1): # 1 ~ 4
-            selected[k] = cand
-            rec_func(k + 1)
-            selected[k] = 0
 
-rec_func(0)
+def solution(k):
+    if k == m :
+        print(' '.join(selected))
+    else:
+        for i in range(1, n+1):
+            selected[k] = str(i)
+            solution(k + 1)
+
+solution(0);
