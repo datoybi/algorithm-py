@@ -1,25 +1,23 @@
-
 import sys
-
-
-class Elem:
-    def __init__(self, name, korean, english, math):
-        self.name = name
-        self.korean = korean
-        self.english = english
-        self.math = math
-
-
 n = int(sys.stdin.readline())
 a = []
 
 for i in range(n):
-    inp = sys.stdin.readline().split()
-    inp[1:] = map(int, inp[1:])
-    a.append(Elem(*inp))
+    a.append(int(sys.stdin.readline()))
 
-a.sort(key=lambda x: (-x.korean, x.english, -x.math, x.name))
+a.sort()
 
-names = [elem.name for elem in a]
-for name in names:
-    print(name)
+mode = a[0]
+modeCnt = 1
+curCnt = 1
+
+for i in range(1, n):
+    if a[i] == a[i-1]:
+        curCnt += 1
+    else:
+        curCnt = 1
+    if modeCnt < curCnt:
+        modeCnt = curCnt;
+        mode = a[i]
+
+print(mode)
