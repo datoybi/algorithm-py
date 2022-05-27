@@ -33,15 +33,15 @@ lst.sort()
 print(lst)
 
 for i in range(1, N):
-    print(lst[i])
-    print(curCnt, modeCnt, mode)
-    if modeCnt < curCnt:
-        modeCnt = curCnt
-        mode = lst[i]
-    if lst[i] == lst[i-1]:
-        curCnt += 1
-        modeCnt += 1
-    else:
-    curCnt = 1
+	print(lst[i])
+	print(curCnt, modeCnt, mode)
+	if modeCnt < curCnt:
+		modeCnt = curCnt
+		mode = lst[i]
+	if lst[i] == lst[i-1]:
+		curCnt += 1
+		modeCnt += 1
+	else:
+		curCnt = 1
 
 print(curCnt, modeCnt, mode)

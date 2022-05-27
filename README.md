@@ -1,147 +1,131 @@
 # Datastructure-and-Algorithm
-*코딩테스트 준비를 위한 알고리즘&자료구조 연습*<br>
-*fast campus의 "알고리즘 / 기술면접 완전 정복 올인원 패키지 Online" 수강*
 
+_코딩테스트 준비를 위한 알고리즘&자료구조 연습_<br>
+_fast campus의 "알고리즘 / 기술면접 완전 정복 올인원 패키지 Online" 수강_
 
 ## 🔷Python 문법 정리🔷
+
 ### 계속 정리해 나갈 예정 (마지막 업데이트: 21.12.30)
 
+🔹 range(start, stop, step) 마지막 인자는 숫자의 간격을 의미
+<pre><code> for i in range(9,-1,-1): # 9~0
+for i in range(0,5): # 0,1,2,3,4</pre></code>
 
-🔹 range(start, stop, step) 마지막 인자는 숫자의 간격을 의미 
-    <pre><code>  for i in range(9,-1,-1): # 9~0 
-	for i in range(0,5): # 0,1,2,3,4</pre></code>
+🔹 개행 없이 프린트
+<pre><code>print(i, end='')</code></pre>
 
-🔹 개행 없이 프린트 
-    <pre><code>print(i, end='')</code></pre>
+🔹 swap
+<pre><code>array[i], array[max] = array[max], array[i]</code></pre>
 
-🔹 swap 
-    <pre><code>array[i], array[max] = array[max], array[i]</code></pre>
+🔹 개행 한번 하고 프린트 하고싶을때
+<pre><code>print('\n'.join(result))</code></pre>
 
-🔹 개행 한번 하고 프린트 하고싶을때 
-	<pre><code>print('\n'.join(result))</code></pre>
+🔹 정렬
+<pre><code> list.sort()
+sorted(list) </code></pre>
 
-🔹 정렬 
-    <pre><code>  list.sort() 
-    sorted(list) </code></pre>
+🔹 역정렬
+reversed는 순서를 뒤집어 주는거기 때문에 sort하고 reverse 쳐야함
+<pre><code> r_answer = list(reversed(answer)) #list()에 감싸야한다</code></pre>
 
-🔹 역정렬 
-    reversed는 순서를 뒤집어 주는거기 때문에 sort하고 reverse 쳐야함
-    <pre><code> r_answer = list(reversed(answer)) #list()에 감싸야한다</code></pre>
-    
     num.sort(reverse=True)
 
+🔹 lambda 인자 : 표현식
+<pre><code> (lambda x,y : x+y)(10, 20) # 30
+array = sorted(array, key=lambda x:x[0]) </code></pre>
 
-🔹 lambda 인자 : 표현식 
-    <pre><code>  (lambda x,y : x+y)(10, 20) # 30 
-    array = sorted(array, key=lambda x:x[0]) </code></pre>
+- 튜플 ?
 
-* 튜플 ? 
-    > 리스트는 []으로 둘러싸지만 튜플은 ()으로 둘러싼다.<br>
-    > 리스트는 그 값의 생성, 삭제, 수정이 가능하지만 튜플은 그 값을 바꿀 수 없다. 
+  > 리스트는 []으로 둘러싸지만 튜플은 ()으로 둘러싼다.<br>
+  > 리스트는 그 값의 생성, 삭제, 수정이 가능하지만 튜플은 그 값을 바꿀 수 없다.
 
-* sys.stdin.readline() 
-    > 데이터의 개수가 많을 때 파이썬에서는 sys.stdin.readline()을 사용 
+- sys.stdin.readline()
+  > 데이터의 개수가 많을 때 파이썬에서는 sys.stdin.readline()을 사용
 
-🔹 3개의 변수에 입력값 할당 
-    <pre><code> n, r, c = map(int, input().split(' ')) </code></pre>
+🔹 3개의 변수에 입력값 할당
+<pre><code> n, r, c = map(int, input().split(' ')) </code></pre>
 
-🔹 list에 int형 input value 넣기 
-    <pre><code> data = list(map(int, input().split(' '))) </code></pre>
+🔹 list에 int형 input value 넣기
+<pre><code> data = list(map(int, input().split(' '))) </code></pre>
 
 🔹 두 변수에 int형 input 넣을때  
-    <pre><code> num, order = map(int, input().split(' ')) </code></pre>
+ <pre><code> num, order = map(int, input().split(' ')) </code></pre>
 
-🔹 while문 
-    <pre><code>hile(bird): # 0이 되면 나가짐 </code></pre>
+🔹 while문
+<pre><code>hile(bird): # 0이 되면 나가짐 </code></pre>
 
 🔹 max()
-    🔹 최대값을 찾는 내장함수
-    <pre><code> max([1, 2, 3]) # 3
-    max(10, 20) # 20</code></pre>
+🔹 최대값을 찾는 내장함수
+<pre><code> max([1, 2, 3]) # 3
+max(10, 20) # 20</code></pre>
 
+🔹 X in S, X not in S > X in S : S안에 X가 있다면 참 <br> > X not in S : S안에 X가 없다면 참 (이때 S는 리스트, 튜플, 문자열)
 
-🔹 X in S, X not in S 
-	> X in S : S안에 X가 있다면 참 <br>
-	> X not in S : S안에 X가 없다면 참 (이때 S는 리스트, 튜플, 문자열)
+- Set
 
-* Set
-	> 중복을 허용하지 않는다.<br>
-	> 순서가 없다. (리스트나 튜플은 순서가 있다)<br>
-	> ```set2 = set('Hello')```<br>
-	> ```set2 # {'e', 'H', 'l', 'o'}```<br>
-	> -> Set 자료형에 인덱싱으로 접근하려면, 튜플로 변환 한 후 접근해야 한다<br> 
-	>```(s1 > = set([1,2,3]) l1 = list(s1))```<br><br>
-	> set자료형으로 교집합 구하기 ```(s1 & s2)```<br>
-	> set자료형으로 합집합 구하기 ```(s1 | s2)```<br>
-	> set자료형으로 차집합 구하기 ```(s1 - s2)```<br>
-	>	> 값추가 (add) <br>
- 	>	>	>		s1 = set([1, 2, 3]) 
-	>	>	>		s1.add(4)
-	>	>	>		s1 # {1, 2, 3, 4}
-	>	>  값 여러개 추가하기 (update)<br>
- 	>	>	>		s1 = set([1, 2, 3])
- 	>	>	>		s1.update([4, 5, 6])
- 	>	>	>		s1 # {1, 2, 3, 4, 5, 6}
-	>	>  특정 값 제거하기 (remove)<br>
- 	>	>	>		s1 = set([1, 2, 3])
- 	>	>	>		s1.remove(2)
- 	>	>	>		s1 # {1, 3}
-	
-	 *reference : https://wikidocs.net/1015*
+  > 중복을 허용하지 않는다.<br>
+  > 순서가 없다. (리스트나 튜플은 순서가 있다)<br> > `set2 = set('Hello')`<br> > `set2 # {'e', 'H', 'l', 'o'}`<br>
+  > -> Set 자료형에 인덱싱으로 접근하려면, 튜플로 변환 한 후 접근해야 한다<br>
+  > `(s1 > = set([1,2,3]) l1 = list(s1))`<br><br>
+  > set자료형으로 교집합 구하기 `(s1 & s2)`<br>
+  > set자료형으로 합집합 구하기 `(s1 | s2)`<br>
+  > set자료형으로 차집합 구하기 `(s1 - s2)`<br> > 값추가 (add) <br> > > s1 = set([1, 2, 3]) > > s1.add(4) > > s1 # {1, 2, 3, 4} > 값 여러개 추가하기 (update)<br> > > s1 = set([1, 2, 3]) > > s1.update([4, 5, 6]) > > s1 # {1, 2, 3, 4, 5, 6} > 특정 값 제거하기 (remove)<br> > > s1 = set([1, 2, 3]) > > s1.remove(2) > > s1 # {1, 3}
 
-🔹 문자열을 한글자씩 끊어서 리스트로 바꾸기 
-	<pre><code>  str = "hello"
-	print(list(str))</code></pre>
+  _reference : https://wikidocs.net/1015_
 
-🔹	변수 출력시 공백 제거하고싶을 떄 
-	print(f"Cube = {a}, Triple = ({b},{c},{d})")</code></pre>
-    print(f'Hamming distance is {distance}.')
+🔹 문자열을 한글자씩 끊어서 리스트로 바꾸기
+<pre><code> str = "hello"
+print(list(str))</code></pre>
+
+🔹 변수 출력시 공백 제거하고싶을 떄
+print(f"Cube = {a}, Triple = ({b},{c},{d})")</code></pre>
+print(f'Hamming distance is {distance}.')
 
 🔹 람다식
-	<pre><code>  def hap(x, y):
-	return x+y
-	print(hap(10,20))</code></pre>
-
+<pre><code> def hap(x, y):
+return x+y
+print(hap(10,20))</code></pre>
 
 🔹 lambda 매개변수 : 실행문<br>
-	<pre><code>  print((lambda x,y: x+y)(10, 20))
-	func = (lambda x: x+1)
-	print(func(4)) #5</code></pre>
+<pre><code> print((lambda x,y: x+y)(10, 20))
+func = (lambda x: x+1)
+print(func(4)) #5</code></pre>
 
 🔹 input() 보다 sys.stdin.readline()이 좀 더 빠르고 메모리도 적게 소모한다.
 🔹 array를 0으로 채우기
+
   <pre><code>    test[0] * 10 // [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
   	array[0] * 10001 </code></pre>
 
 🔹 Python3는 pypy3보다 느리다, pypy3는 Python3보다 빠르지만 메모리를 많이 먹는다.
 
 ## 🔹 Dictionary 딕셔너리
-* 기본 모습 
-	* key : value 쌍으로 이루어져 있음
+
+- 기본 모습 \* key : value 쌍으로 이루어져 있음
 <pre><code> dic = {'name':'pey', 'phone':'0119993323', 'birth': '1118'}</code></pre>
-* 쌍 추가 
+- 쌍 추가
 <pre><code>a = {1: 'a'}
 a[2] = 'b'
 a # {1: 'a', 2: 'b'}</code></pre>
-* 삭제
+- 삭제
 <pre><code>del a[1]</code></pre>
-* key를 사용해 value 얻기
+- key를 사용해 value 얻기
 <pre><code>grade = {'pey': 10, 'julliet': 99}
 grade['pey'] # 10
 grade['julliet'] # 99</code></pre>
 
-* max Value의 키 얻기
+- max Value의 키 얻기
 <pre><code>
 for key, value in result.items():
     if value == max(result.values()):
         print(key)</code></pre>
 
-* 딕셔너리 키로 정렬
+- 딕셔너리 키로 정렬
 <pre><code>
 dictionary = sorted(dictionary.items(), reverse=True)
 </code></pre>
 
-* 반복문 사용
+- 반복문 사용
 <pre><code>
 for key, value in books.items(): # key, value 반복문
     if value == target: 
@@ -149,13 +133,15 @@ for key, value in books.items(): # key, value 반복문
     # target = max(key.values())
 </code></pre>
 
-* 주의사항 
-	* key는 고유값이므로 중복되는 key값을 설정해 놓으면 나머지 것들이 모두 무시된다는점을 주의해야한다.
+- 주의사항
+  - key는 고유값이므로 중복되는 key값을 설정해 놓으면 나머지 것들이 모두 무시된다는점을 주의해야한다.
 
 🔹 승 구하기
+
  <pre><code>print(2**3) #2*2*2=8</code></pre>
 
 🔹 문자열 뒤집기
+
  <pre><code>s = '61'
 print(s[::-1]) # 16</code></pre>
 
@@ -164,7 +150,7 @@ print(s[::-1]) # 16</code></pre>
 예)1,2,3의 숫자가 적힌 카드가 있을 때, 이 중 두 장을 꺼내는 경우의 수 -> 12, 13, 21, 23, 31, 32
 'A', 'B', 'C'로 만들 수 있는 경우의 수 -> 'ABC', 'ACB', 'BAC', 'BCA', 'CAB', 'CBA'
 
-* 사용법 
+- 사용법
 
 <pre><code>import itertools
 arr = ['A', 'B', 'C']
@@ -178,7 +164,8 @@ print(list(map(''.join, itertools.permutations(pool)))) # 3개의 원소로 수�
 print(list(map(''.join, itertools.permutations(pool, 2)))) # 2개의 원소로 수열 만들기
 # ['AB', 'AC', 'BA', 'BC', 'CA', 'CB']</pre></code>
 
-for문 안의 permutation 
+for문 안의 permutation
+
 <pre><code>
 import itertools
 lst = ['1', '2', '3']
@@ -204,7 +191,8 @@ for i in itertools.permutations(lst, 2):
 </code></pre>
 
 ## 🔹람다함수
-* 인자 : 표현식
+
+- 인자 : 표현식
 <pre><code>
 lst = [
         [55, 185],
@@ -217,21 +205,21 @@ lst = [
 func = sorted(lst, key = lambda x : [-x[0], -x[1]])
 </code></pre></code>
 
-* sorted -> 정렬
-    * x : 내림차순으로 정렬
-    * x : 오름차순으로 정렬
-<br/>
+- sorted -> 정렬
+  _ x : 내림차순으로 정렬
+  _ x : 오름차순으로 정렬
+  <br/>
 
-* 리스트 값의 len이 작은것부터 정렬
+- 리스트 값의 len이 작은것부터 정렬
 <pre><code>
 lst.sort(key=len)
 lst.sort(key = lambda x : [x[-2],  x[-1]]) #-2번째오름차순 후 -1번째 오름차순
 </code></pre>
 
-리스트의 두 원소중 차로 정렬 
+리스트의 두 원소중 차로 정렬
 lst.sort(key = lambda x : x[1]-x[0])
 
-* 0인 원소의 list 만들기
+- 0인 원소의 list 만들기
 <pre><code>
 zero_lst = [0 for _ in range(130)]
 sys.stdin.readline()
@@ -239,64 +227,64 @@ sys.stdin.readline()
 
 ## 🔹impoty sys
 
-* 한개입력
-<pre><code>a = int(sys.stdin.readline()) </code></pre>
-: 3을 입력하면 3\n이렇게 입력이 되기 때문에 형변환을 거쳐야 함
+- 한개입력
+  <pre><code>a = int(sys.stdin.readline()) </code></pre>
 
-* 여러개 입력 
+  : 3을 입력하면 3\n이렇게 입력이 되기 때문에 형변환을 거쳐야 함
+
+- 여러개 입력
 <pre><code>a,b,c = map(int, sys.stdin.readline().split())
 str1, str2 = map(str, sys.stdin.readline().split())</code></pre>
 
-* 리스트에 저장 
+- 리스트에 저장
 <pre><code>int data = list(map(int, sys.stdin.readline().split()))</code></pre>
 
-* 문자열 
+- 문자열
 <pre><code>value = list(map(str, sys.stdin.readline().split()))
 value = sys.stdin.readline().split()</code></pre>
 
-* 2차원 리스트에 저장
+- 2차원 리스트에 저장
 <pre><code>data = []
 n = int(sys.stdin.readline())
 for i in range(n):
     data.append(list(map(int,sys.stdin.readline().split())))</code></pre>
 
-* 문자열 n줄을 입력받아 리스트에 저장 
+- 문자열 n줄을 입력받아 리스트에 저장
 <pre><code>n = int(sys.stdin.readline())
 data = [sys.stdin.readline().strip() for i in range(n)]</code></pre>
 
-* 개행 없애기 
-    * strip() 붙이기
+- 개행 없애기 \* strip() 붙이기
 <pre><code>word_lst.append(sys.stdin.readline().strip())</code></pre>
 
-* 리스트 개행 없애기 
+- 리스트 개행 없애기
 <pre><code> S = list(sys.stdin.readline().strip().split(','))</code></pre>
 
-* 리스트를 문자열로 붙이기
+- 리스트를 문자열로 붙이기
 <pre><code>print(''.join(lst))</code></pre>
 
-* 리스트 max값이 여러개인지 판별 
+- 리스트 max값이 여러개인지 판별
 <pre><code>print(lst.count(4)) # 값이 4인 list의 원소를 카운트</code></pre>
 
-* 띄어쓰기 없는 원소일 경우 이차원배열
+- 띄어쓰기 없는 원소일 경우 이차원배열
 <pre><code>for i in range(N):
     room.append(list(map(str, sys.stdin.readline())))</code></pre>
 
-### 🔹 삼항연산자 
+### 🔹 삼항연산자
+
 <pre><code>print(f'{A} & {B} are anagrams.' if flag == True else f'{A} & {B} are NOT anagrams.')</code></pre>
 
-
-* list 중복 제거 방법 : set으로 바꿨다가 list로 형변환 하기 
+- list 중복 제거 방법 : set으로 바꿨다가 list로 형변환 하기
 <pre><code>set_lst = set()
 for _ in range(int(sys.stdin.readline())):
     set_lst.add(sys.stdin.readline().rstrip())
 lst = list(set_lst)
 </code></pre>
 
-* 리스트 맨 앞, 맨 뒤에 원소 삽입하기
+- 리스트 맨 앞, 맨 뒤에 원소 삽입하기
 <pre><code>result.insert(0, chr(i)) # 맨앞에 원소 삽입
 result.append(chr(i)) # 맨뒤에 원소 삽입</code></pre>
 
-* 문자인지 숫자인지 판별하는 메소드
+- 문자인지 숫자인지 판별하는 메소드
 <pre><code>
     if value.isdigit(): # 숫자면
         print("숫자")
@@ -305,11 +293,12 @@ result.append(chr(i)) # 맨뒤에 원소 삽입</code></pre>
         print('문자')
 </code></pre>
 
-* 시간초과가 난다면
-    * list대신 dictionary로 사용 할 수 있다면 그걸로 사용하기
-    * list in 순회하는 거 반복문이니 사용하지말고 다른방법 생각해보기
+- 시간초과가 난다면
 
-* 이중 딕셔너리 
+  - list대신 dictionary로 사용 할 수 있다면 그걸로 사용하기
+  - list in 순회하는 거 반복문이니 사용하지말고 다른방법 생각해보기
+
+- 이중 딕셔너리
 <pre><code>
 dic = {
     'A': {'A': 'A', 'G': 'C', 'C': 'A', 'T': 'G'},
@@ -318,10 +307,10 @@ dic = {
     'T': {'A': 'G', 'G': 'A', 'C': 'G', 'T': 'T'}
 }
 
-print(dic['A']['G']) # C
+print(dic['A']['g']) # C
 </code></pre>
 
-* 입력 받을 때 간결한 표현 
+- 입력 받을 때 간결한 표현
 <pre><code>
 N, M = list(map(int, sys.stdin.readline().split()))
 dice, board = list(), list()
@@ -329,66 +318,67 @@ board.append(0)
 dice.append(0)
 
 for i in range(N):
-    board.append(int(sys.stdin.readline()))
+board.append(int(sys.stdin.readline()))
 
 for i in range(M):
-    dice.append(int(sys.stdin.readline()))
+dice.append(int(sys.stdin.readline()))
 </code></pre>
-얘보단 
+얘보단
+
 <pre><code>N, M = list(map(int, sys.stdin.readline().split()))
 board = [0] + [int(input()) for _ in range(N)]
 dice = [0] + [int(input()) for _ in range(M)]
 </code></pre>
 
-* 배열 한줄로 적기
+- 배열 한줄로 적기
 <pre><code>lst = [i for i in range(1, 21)]</code></pre>
 
-* 프린트 하는데 리스트 원소를 한칸씩 띄우고
-그 다음에 개행 하고싶을때 
+- 프린트 하는데 리스트 원소를 한칸씩 띄우고
+그 다음에 개행 하고싶을때
 <pre><code>
 for j in lst:
         print(j, end=' ')
     print()
 </code></pre>
 
-* 딕셔너리 두번째 키값 가져오기
+- 딕셔너리 두번째 키값 가져오기
 <pre><code>print(list(direction.keys())[1]) # 두번째 키값 가져오기</code></pre>
 
-* max value index 값 가져오기
+- max value index 값 가져오기
 <pre><code>print(count_lst.index(max(count_lst)))</code></pre>
 
 🔹 EOI
+
 <pre><code>while True:
     try:
     except:
         break
 </code></pre>
 
-다른 진수의 진수 변환하기
-print(int(input(), 16))
+- 다른 진수의 진수 변환하기
+<pre><code>print(int(input(), 16))</code></pre>
 
-🎈공부할 부분
-람다 배우기 max_val = max(t[1] for t in result_lst)
-try - except 공부
+## 🔹 공부할 부분
 
-정렬값이랑 같은지(이미 정렬이 도이ㅓ있는지!?) 비교
-  if sorted(result) == result:
+- 람다 배우기 max_val = max(t[1] for t in result_lst)
+- try - except 공부
 
-소숫점 자리수가 있는지 확인하는 메서드 : (1.0).is_integer()
-if value.is_integer()****
+- 정렬값이랑 같은지(이미 정렬이 도이ㅓ있는지!?) 비교
+<pre><code> if sorted(result) == result: </code></pre>
 
+* 소숫점 자리수가 있는지 확인하는 메서드 : (1.0).is_integer()
+<pre><code> if value.is_integer()</code></pre>
 
-for i in range(zero):
+* 뒤부터 원소 뺴내고 싶을 때
+<pre><code>for i in range(zero):
     S.pop(-S[::-1].index('0')-1) # 뒤부터 해당 원소 뺴낼 떄 사용 
-<<<<<<< HEAD
+</code></pre>
 
-formatting using %
+## 🔹 formatting using %
 
-'''
-%s -> 문자열
+<pre><code>%s -> 문자열
 %d -> 정수
 %f -> 실수
-'''
 
 num1 = 50
 s1 = 'my age is %d' % num1
@@ -401,12 +391,14 @@ print(s2)
 print('%.3f' % num2) 
 
 print('my name is %s , and i am %d years old. also my height is %.3f' % ('dasom', 29, 166.6))
-=======
 
-# 얕은 복사 깊은 복사 공부!!
-# 얕은복사
-# = 을 이용한 얕은 복사
-print('\n=을 이용한 얕은 복사')
+</code></pre>
+
+## 🔹 얕은 복사 VS 깊은 복사
+
+- 얕은복사
+- = 을 이용한 얕은 복사
+<pre><code>print('\n=을 이용한 얕은 복사')
 arr1 = [1,2,3]
 arr2 = arr1 
 print('arr1: ' , arr1, '참조값 : ' , hex(id(arr1)))
@@ -414,40 +406,51 @@ print('arr2: ' , arr2, '참조값 : ' , hex(id(arr2))) # 참조값이 같다.
 arr2.append(100)
 print(arr1, arr2) # arr2에만 넣었으나 arr1에도 적용 (참조값이 같기 때문)
 print('=' * 50)
+</code></pre>
 
-# [:] 슬라이싱을 이용한 깊은 복사같은 얕은 복사
-print('\n슬라이싱을 이용한 얕은 복사')
+- [:] 슬라이싱을 이용한 깊은 복사같은 얕은 복사
+<pre><code>print('\n슬라이싱을 이용한 얕은 복사')
 arr3 = [4,5,6, [2,4,8]]
 arr4 = arr3[:] # 슬라이싱 복사
 print('arr3: ' , arr3, '참조값 : ' , hex(id(arr3)))
 print('arr4: ' , arr4, '참조값 : ' , hex(id(arr4))) # 둘의 참조값이 다르다!
 arr4.append(100)
-print(arr3, arr4) # arr4만 바뀌었다 여기까지만 본다면 깊은 복사같다. 
+print(arr3, arr4) # arr4만 바뀌었다 여기까지만 본다면 깊은 복사같다.
+
 # 그러나 얕은 복사라고 하는 이유는?
+
 # 리스트 안에 있는 리스트를 보자.
+
 print('arr3[3]: ' , arr3[3], '참조값 : ' , hex(id(arr3[3])))
 print('arr4[3]: ' , arr4[3], '참조값 : ' , hex(id(arr4[3]))) # 둘의 참조값이 같다!
+
 # 리스트 안에 있는 리스트에 값 추가
+
 arr3[3].append(9999)
 print(arr3, arr4) # 두 리스트안의 리스트에 삽입 됨을 알 수 있다.
-print('=' * 50)
+print('=' \* 50)
 
 # copy 메서드로 복사 - [:] 와 동일한 결과가 나온다.
+
 print('\ncopy 메서드를 이용한 얕은 복사')
 arr3 = [4,5,6, [2,4,8]]
 arr4 = arr3.copy() # copy 복사
 print('arr3: ' , arr3, '참조값 : ' , hex(id(arr3)))
 print('arr4: ' , arr4, '참조값 : ' , hex(id(arr4))) # 둘의 참조값이 다르다!
 arr4.append(100)
-print(arr3, arr4) 
+print(arr3, arr4)
+
 # 리스트 안에 있는 리스트
+
 print('arr3[3]: ' , arr3[3], '참조값 : ' , hex(id(arr3[3])))
 print('arr4[3]: ' , arr4[3], '참조값 : ' , hex(id(arr4[3]))) # 둘의 참조값이 같다!
+
 # 리스트 안에 있는 리스트에 값 추가
+
 arr3[3].append(9999)
 print(arr3, arr4) # 두 리스트안의 리스트에 삽입 됨을 알 수 있다.
 
-print('=' * 50)
+print('=' \* 50)
 import copy
 print('\n깊은 복사 copy.deepcopy')
 arr3 = [4,5,6, [2,4,8]]
@@ -455,45 +458,55 @@ arr4 = copy.deepcopy(arr3) # 슬라이싱 복사
 print('arr3: ' , arr3, '참조값 : ' , hex(id(arr3)))
 print('arr4: ' , arr4, '참조값 : ' , hex(id(arr4))) # 둘의 참조값이 다르다!
 arr4.append(100)
-print(arr3, arr4) 
+print(arr3, arr4)
+
 # 리스트 안에 있는 리스트
+
 print('arr3[3]: ' , arr3[3], '참조값 : ' , hex(id(arr3[3])))
 print('arr4[3]: ' , arr4[3], '참조값 : ' , hex(id(arr4[3]))) # 둘의 참조값이 같다!
+
 # 리스트 안에 있는 리스트에 값 추가
+
 arr3[3].append(9999)
 print(arr3, arr4) # 두 리스트안의 리스트에 삽입 됨을 알 수 있다.
-print('=' * 50)
+print('=' \* 50)
+</code></pre>
 
-# immutable 한 객체(int)
-print('\nimmutable 한 객체(int)')
+## 🔹 immutable 한 객체(int)
+
+<pre><code>print('\nimmutable 한 객체(int)')
 num1 = 50
 num2 = num1 # = 복사
 print(num1, num2) # 50 50
 num2 += 1
 print(num1, num2) # 50 51 : immutable 한 객체는 복사를 해도 같은곳을 참조하지 않는다
+</code></pre>
 
-# 파이썬에서의 Stack, Queue
-Stack - list의 append, pop 사용
+## 🔹 파이썬에서의 Stack, Queue
 
-queue
-from collections import deque
-사용하기 
+- Stack - list의 append, pop 사용
+- queue
+<pre><code>from collections import deque 
 queue = deque()
-
 queue.append(5)
 queue.popleft()
 queue.reverse()
 print(queue)
+</code></pre>
 
-# 재귀 사용시 꼭 명시해두기
-import sys
+## 🔹 재귀 사용시 꼭 명시해 둘 것
+
+<pre><code>import sys
 sys.setrecursionlimit(10 ** 6)
 boj 에서는 1000으로 되어있다
+</code></pre>
 
-# 공백없는 숫자 리스트에 인트형으로 넣기
-board = []
+## 🔹 공백없는 숫자 리스트에 INT형 넣기
+
+<pre><code>board = []
 for i in range(n):
     tmp = input().rstrip()
     board.append(list(map(int, str(tmp))))
     
 graph = [list(map(int, list(input()))) for _ in range(M)]
+</code></pre>
